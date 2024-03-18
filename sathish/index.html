@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sk.co.in</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="validaiton.js"></script>
 </head>
+
 <body>
-    <h1>hi</h1>
+    <!-- <select id="mySelect" onchange="myExample()">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volvo">Volvo</option>
+    </select>
+    <p id="demo"></p>
+    <div>
+        example :
+        <button onclick="newExample()">Click me</button>
+    </div>
+    <div>
+        example :
+        <button onmouseover="nextExample()" id="bg">hover me</button>
+    </div>
+    <div>
+        Example 3:
+        <button onmouseout="mouseoutExample()">hoveer out me</button>
+    </div>
+    <div>
+        example 4:
+        <input type="text" onkeydown="onkeydownExample()" />
+        <p id="inputid"></p>
+    </div>
+    <script>
+
+        // // onchange example
+        // function myExample() {
+        //     let x = document.getElementById("mySelect").value;
+        //     document.getElementById("demo").innerHTML = "your selecttion :" + x;
+        //     alert(x);
+        // }
+
+        // // onclick example
+        // function newExample() {
+        //     alert("thx to click me, you can see the onclick event example ")
+        // }
+
+        // // onmouseover
+        // function nextExample() {
+        //     alert("thx to hover me, you can see the onmouseover event example ")
+        // }
+        // // onmouseout
+        // function mouseoutExample() {
+        //     alert("thx to hover out me, you can see the onmouseout event example ")
+        // }
+        // // onkeydown
+        // function onkeydownExample() {
+        //     document.getElementById("inputid").innerHTML = "you pressed "
+        // }
+
+
+
+
+
+
+    </script> -->
+
+    <!-- form -->
+    <div class="form-container">
+        <form action="#" method="post">
+            <fieldset>
+                <div class="heading">Bio Data</div>
+                <br>
+                <div  class="form">
+                    <label for="">First Name :</label>
+                    <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname" required
+                        minlength="5" maxlength="10" pattern="[A-Z][a-z]" >
+                    <br>
+                    <br>
+                    <label for="">Last Name : </label>
+                    <input type="text" placeholder="Enter Last Name" class=" " id="lname" name="lname" required 
+                    minlength="5" maxlength="10" pattern="[A-Z][a-z]">
+                    <br>
+                    <br>
+                    <label for="">Age : </label>
+                    <input type="number" placeholder="Enter Age" class="" id="age" name="age" required
+                    minlength="2" maxlength="3">
+                    <br>
+                    <br>
+                    <label for="">Date of birth : </label>
+                    <input type="date" placeholder="Enter DOB" class="" id="dob" name="dob" required>
+                    <br>
+                    <br>
+                    <label for="">Mobile Number :</label>
+                    <input type="number" placeholder="Enter Mobile Number" class="" id="mob" name="mob" required 
+                    minlength="9" maxlength="9" pattern="[89] [0-9] {9}">
+                    <br>
+                    <br>
+                    <label for="">Email id : </label>
+                    <input type="email" placeholder="Enter Mobile Number" class="" id="email" name="email" required 
+                    pattern="[a-z0-9_\-\.]+[@][a-z]+[a-z]+[\.][a-z]{2,3}">
+                    <br>
+                    <br>
+                    <label for="">Qualification : </label>
+                    <input type="text" placeholder="Enter Qualification" class="" id="qul" name="qul" required>
+                    <br>
+                    <br>
+                    <label for="">Date of joining : </label>
+                    <input type="date" placeholder="Enter Jin Date" class="" id="doj" name="doj" required>
+                    <br>
+                    <br>
+                    <input type="submit" id="" name="submit-btn">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
 </body>
+
 </html>

@@ -1,0 +1,20 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.form-container {
+    margin: 0 auto;
+    width: 90%;
+    padding: 30px;
+}
+.heading{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 10px;
+}
+.form{
+    padding: 20px;
+    text-align: center;
+    
+}
