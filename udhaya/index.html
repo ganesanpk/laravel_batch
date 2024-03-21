@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        <form methods="post" action="#">
+            <fieldset>
+                <div>
+                    <div class="h1 text-center">BIO DATA</div>
+                </div>
+                <lable for="">First Name :</lable>
+                <input type="text" placeholder="First Name" class="" id="fname" name="fname" required>
+                <br>
+                <br>
+                <lable for="">Last Name :</lable>
+                <input type="text" placeholder="Last Name" class="" id="lname" name="lname" required>
+                <br>
+                <br>
+                <lable for="">Age :</lable>
+                <input type="number" placeholder="" class="" id="number" name="number" required>
+                <br>
+                <br>
+                <lable for=""> date of Birth :</lable>
+                <input type="date" placeholder="" class="" id="dob" name="dob" required>
+                <br> 
+                <br>
+                <lable for="">Mobile Number :</lable>
+                <input type="number" placeholder="" class="" id="mobile" name="mobile" required>
+                <br> 
+                <br>
+                <lable for="">E-mail id :</lable>
+                <input type="email" placeholder="" class="" id="emial" name="email" required>
+                <br> 
+                <br>
+                <lable for="">Qualification :</lable>
+                <input type="text" placeholder="" class="" id="qualify" name="qualify" required>
+                <br>
+                <br>
+                <input type="submit" value="submit" id="submit" name="submit">
+            </fieldset>
+        </form>
+    </body>
+    </div>
+    
+<script>
+    function validation(){
+    var fname = document.getElementById=('fname').value;
+    var flength = fname.length;
+    if (fname !=""){
+        if(flength >3 || flength < 11){
+            alert("first name should be more thn=an 3 and less than 11 characters");
+        }
+        else{
+            alert("first name is mandatory");
+        }
+    }
+}
+</script>
+</html>
