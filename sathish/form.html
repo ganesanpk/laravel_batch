@@ -15,7 +15,7 @@
 <body>
     <div class="container p-4">
         <div class="p-2 mb-3 fs-2">Bio Data</div>
-        <form action="">
+        <form action="#" name="myForm">
             <div class=" col-md-6 mb-3">
                 <label for="" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
@@ -57,21 +57,69 @@
                 <label for="" class="form-label">Date Of Joining</label>
                 <input type="date" class="form-control" id="jdate" name="jdate" placeholder="Enter Join Date">
             </div>
-            <button type="submit" class="btn btn-primary" id="submit" name="submit-btn"
-                onclick="validation()">Submit</button>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" id="submit" name="submit-btn"
+                    onclick="validation()">Submit</button>
+            </div>
+
         </form>
     </div>
 </body>
 <script>
     function validation() {
+        // first name
         var fname = document.getElementById('fname').value;
         var flength = fname.length;
         if (fname != "") {
-            alert("blank name are not allowed")
-        } else if (fname.length < 5 || flength > 10) {
-            alert("first name should must be 5 characters")
+            if (flength > 3 || flength < 11) {
+                alert("First  Name  Should Be Morethan 3 and lessthan 11 charactor");
+            }
         } else {
-            alert("err")
+            alert("First Name Is Manditory");
+        }
+
+        // last name
+        var lname = document.getElementById('fname').value;
+        var flength = lname.length;
+        if (fname != "") {
+            if (flength > 2 || flength < 11) {
+                alert("First  Name  Should Be Morethan 2 and lessthan 11 charactor");
+            }
+        } else {
+            alert("Last Name Is Manditory");
+        }
+
+        // age
+        if (age != null) {
+            if (age > 18 || age < 58) {
+                alert("Age Must be 18 to 58");
+            } else {
+                alert("Enter Your Age");
+            }
+        }
+
+        // dob
+        if (dob != null) {
+            alert("Please Enter Your Date oF Birth");
+        } else {
+            alert("Date Of Birth is Manditory");
+        }
+
+        // mobile\
+        // var 
+        if (mob != null) {
+            alert("Please Enter Mobile Number")
+        } else {
+            alert("Mobile Number Is Manditory")
+        }
+
+        //email
+        var email = document.getElementById('email').value;
+        var re = /^[a-z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}/;
+        if (re.test(email)) {
+            alert("please Enter Email id");
+        } else {
+            alert("Email Id Is Manditory");
         }
 
     }
