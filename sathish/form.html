@@ -70,8 +70,9 @@
         // first name
         var fname = document.getElementById('fname').value;
         var flength = fname.length;
+        var mob= document.getElementById('mobile').value;
         if (fname != "") {
-            if (flength > 3 || flength < 11) {
+            if (flength < 3 || flength > 11) {
                 alert("First  Name  Should Be Morethan 3 and lessthan 11 charactor");
             }
         } else {
@@ -82,7 +83,7 @@
         var lname = document.getElementById('fname').value;
         var flength = lname.length;
         if (fname != "") {
-            if (flength > 2 || flength < 11) {
+            if (flength < 2 || flength > 11) {
                 alert("First  Name  Should Be Morethan 2 and lessthan 11 charactor");
             }
         } else {
@@ -93,21 +94,21 @@
         if (age != null) {
             if (age > 18 || age < 58) {
                 alert("Age Must be 18 to 58");
-            } else {
+            } 
+        }else {
                 alert("Enter Your Age");
             }
-        }
 
         // dob
         if (dob != null) {
-            alert("Please Enter Your Date oF Birth");
+            
         } else {
             alert("Date Of Birth is Manditory");
         }
 
         // mobile\
         // var 
-        if (mob != null) {
+        if (mob) {
             alert("Please Enter Mobile Number")
         } else {
             alert("Mobile Number Is Manditory")
@@ -115,14 +116,17 @@
 
         //email
         var email = document.getElementById('email').value;
-        var re = /^[a-z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}/;
-        if (re.test(email)) {
-            alert("please Enter Email id");
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email.test(re)) {
+            alert("Enter email id with format");
         } else {
             alert("Email Id Is Manditory");
         }
 
     }
+
+
 </script>
 
 </html>
