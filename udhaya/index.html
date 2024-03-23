@@ -13,34 +13,30 @@
                     <div class="h1 text-center">BIO DATA</div>
                 </div>
                 <lable for="">First Name :</lable>
-                <input type="text" placeholder="First Name" class="" id="fname" name="fname" required>
+                <input type="text" placeholder="First Name" class="" id="fname" name="fname">
                 <br>
                 <br>
                 <lable for="">Last Name :</lable>
-                <input type="text" placeholder="Last Name" class="" id="lname" name="lname" required>
+                <input type="text" placeholder="Last Name" class="" id="lname" name="lname">
                 <br>
                 <br>
                 <lable for="">Age :</lable>
-                <input type="number" placeholder="" class="" id="number" name="number" required>
+                <input type="number" placeholder="" class="" id="number" name="number">
                 <br>
                 <br>
                 <lable for=""> date of Birth :</lable>
-                <input type="date" placeholder="" class="" id="dob" name="dob" required>
-                <br> 
-                <br>
-                <lable for="">Mobile Number :</lable>
-                <input type="number" placeholder="" class="" id="mobile" name="mobile" required>
+                <input type="date" placeholder="" class="" id="dob" name="dob">
                 <br> 
                 <br>
                 <lable for="">E-mail id :</lable>
-                <input type="email" placeholder="" class="" id="emial" name="email" required>
+                <input type="email" placeholder="" class="" id="emial" name="email">
                 <br> 
                 <br>
                 <lable for="">Qualification :</lable>
-                <input type="text" placeholder="" class="" id="qualify" name="qualify" required>
+                <input type="text" placeholder="" class="" id="qualify" name="qualify">
                 <br>
                 <br>
-                <input type="submit" value="submit" id="submit" name="submit">
+                <input type="submit" value="submit" id="submit" name="submit" onclick>
             </fieldset>
         </form>
     </body>
@@ -49,15 +45,57 @@
 <script>
     function validation(){
     var fname = document.getElementById=('fname').value;
+    var lname = document.getElementById=('lname').value;
+    var age = document.getElementById=('age').value;
+    var dob = document.getElementById=('dob').value;
+    var email = document.getElementById=('email').value;
+    var qual = document.getElementById=('qual').value;
     var flength = fname.length;
     if (fname !=""){
         if(flength >3 || flength < 11){
             alert("first name should be more thn=an 3 and less than 11 characters");
         }
+    }
         else{
             alert("first name is mandatory");
         }
+    
+    if (lname !=""){
+        if (flength > 3 || flength < 11){
+            alert("last name should be more than 3 and less than 11 characters");
+        }
     }
+        else{
+            alert("last name is mandatory");
+        }
+    if (age !=""){
+        if (age > 18 || age < 50){
+            alert("age should be greater than 18 and less than 50 characters");
+        }
+    }
+        else{
+            alert("age name is mandatory");
+        }
+    if (dob !=""){
+       
+        alert("dob should be in correct format");
+        }
+        else{
+            alert("dob is mandatory");
+        }
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email.match(emailPattern)) {
+            alert("enter your valid email")
+        }
+        else{
+            alert("email is mandatory")
+        }
+        if (qual !=""){
+       
+       alert("enter your original qualification");
+       }
+       else{
+           alert("qualification is mandatory");}
 }
 </script>
 </html>
