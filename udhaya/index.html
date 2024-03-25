@@ -70,7 +70,7 @@
             alert("last name is mandatory");
         }
     if (age !=""){
-        if (age > 18 || age < 50){
+        if (age < 18 || age > 50){
             alert("age should be greater than 18 and less than 50 characters");
         }
     }
@@ -86,10 +86,10 @@
         }
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (email.match(emailPattern)) {
-            alert("enter your valid email")
+            alert("enter your valid email");
         }
         else{
-            alert("email is mandatory")
+            alert("email is mandatory");
         }
         if (qual !=""){
        

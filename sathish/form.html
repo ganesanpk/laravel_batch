@@ -70,7 +70,6 @@
         // first name
         var fname = document.getElementById('fname').value;
         var flength = fname.length;
-        var mob= document.getElementById('mobile').value;
         if (fname != "") {
             if (flength < 3 || flength > 11) {
                 alert("First  Name  Should Be Morethan 3 and lessthan 11 charactor");
@@ -80,49 +79,77 @@
         }
 
         // last name
-        var lname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
         var flength = lname.length;
-        if (fname != "") {
+        if (lname != "") {
             if (flength < 2 || flength > 11) {
-                alert("First  Name  Should Be Morethan 2 and lessthan 11 charactor");
+                alert("last name should b morethen 2 and lessthan 11 charactor");
             }
         } else {
-            alert("Last Name Is Manditory");
+            alert("last name is manditory")
         }
 
         // age
+        var age = document.getElementById('age').value;
         if (age != null) {
-            if (age > 18 || age < 58) {
+            if (age < 18 || age > 58) {
                 alert("Age Must be 18 to 58");
-            } 
-        }else {
-                alert("Enter Your Age");
             }
+        } else {
+            alert("Enter Your Age");
+        }
 
         // dob
-        if (dob != null) {
-            
+        var dob = document.getElementById("dob").value;
+        if (dob != "") {
+            alert("dob updated")
         } else {
             alert("Date Of Birth is Manditory");
         }
 
-        // mobile\
-        // var 
-        if (mob) {
-            alert("Please Enter Mobile Number")
-        } else {
-            alert("Mobile Number Is Manditory")
-        }
+
+        // mobile
+        // var mob = document.getElementById('mob').value;
+        // const mobre = /^[89][0-9]{9}+$/ ;
+        // if (!mob.test(mobre)) {
+        //     alert("Please Enter Mobile Number")
+        // } else {
+        //     alert("Mobile Number Is Manditory")
+        // }
 
         //email
         var email = document.getElementById('email').value;
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
         if (!email.test(re)) {
             alert("Enter email id with format");
         } else {
             alert("Email Id Is Manditory");
         }
+
+        // password
+        var pass = document.getElementById('pass').value;
+        var flength = pass.length;
+        if (pass != "") {
+            if (flength < 5 || flength > 7) {
+                alert("password should be morethen 5 and lessthan 7 charactor");
+            }
+        } else {
+            alert("Enter your password")
+        }
+        // confirm password
+
+        // qualification
+        var qual = document.getElementById('qual').value;
+        var flength = qual.length;
+        if (qual != "") {
+            if (flength > 3 || flength < 4) {
+                alert("qualification Must be 2 to 4");
+            }
+        } else {
+            alert("Enter your Qualification")
+        }
+
+        // date of joining
 
     }
 
