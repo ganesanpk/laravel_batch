@@ -109,13 +109,13 @@
 
 
         // mobile
-        // var mob = document.getElementById('mob').value;
-        // const mobre = /^[89][0-9]{9}+$/ ;
-        // if (!mob.test(mobre)) {
-        //     alert("Please Enter Mobile Number")
-        // } else {
-        //     alert("Mobile Number Is Manditory")
-        // }
+        var mob = document.getElementById('mob').value;
+        const mobre = /[89][0-9]{9}/;
+        if (!mobre.test(mob)) {
+            alert("Your mobile number :" +mob)
+        } else {
+            alert("plase enter valid mobile number");
+        }
 
         //email
         var email = document.getElementById('email').value;
@@ -129,7 +129,7 @@
         // password
         var pass = document.getElementById('pass').value;
         var flength = pass.length;
-        if (pass != "") {
+        if (!pass != "") {
             if (flength < 5 || flength > 7) {
                 alert("password should be morethen 5 and lessthan 7 charactor");
             }
@@ -141,12 +141,12 @@
         // qualification
         var qual = document.getElementById('qual').value;
         var flength = qual.length;
-        if (qual != "") {
-            if (flength > 3 || flength < 4) {
+        if (!qual != "") {
+            if (flength < 3 || flength > 4) {
                 alert("qualification Must be 2 to 4");
             }
         } else {
-            alert("Enter your Qualification")
+            alert("Qualification is maditary")
         }
 
         // date of joining
