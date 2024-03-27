@@ -45,7 +45,7 @@
                     <br>
                     <div>
                         <label for="">QUALIFICATION:</label>
-                        <input type="text" placeholder="Enter your qualification" class="" id="qualification">
+                        <input type="text" placeholder="Enter your qualification" class="" id="quali">
                          
                     </div>
                     <br>
@@ -93,45 +93,49 @@
             alert("last name is a madatrory")
         }
         var email = document.getElementById('email').value;
-        const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (email) {
-            if (!email.test(mailformat))
-            alert("enter mail id with format");
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email!="") {
+            if (email.test(mailformat)){
+                alert("enter mail id with format");
+            }
         } else {
             alert("email address id madatrory");
         }
         var dob = document.getElementById('dob').value;
-        if (dob == null){
+        if (dob = null){
 
         }else{
             alert("dob is madatrory")
         }
         var mob = document.getElementById("mob").value;
         var lenmob = mob.length
-        if (mob == ""){
+        if (mob = null){
         }else{
             alert("plese enter mobile number")
         }
-        var qualification = document.getElementById('qualification').value;
-        if(qualification = null){
-
+        var quali = document.getElementById('quali').value;
+        var flength= quali.lenght;
+        if(quali != ""){
+            if(flength >=2|| flength<=5){
+                alert("flength must be less 2 or high 5")
+            }
         }else{
             alert("plese enter qualification")
         }
         var nation = document.getElementById('nation')
-        if(nation == null){
+        if(nation = null){
 
         }else{
             alert("plese enter nation")
         }
         var state = document.getElementById('state')
-        if(state == null){
+        if(nation = null){
 
         }else{
             alert("plese enter state")
         }
         var comment = document.getElementById('comment')
-        if(comment == null){
+        if(nation = null){
 
         }else{
             alert("plese enter address")
