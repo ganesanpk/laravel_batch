@@ -110,11 +110,11 @@
 
         // mobile
         var mob = document.getElementById('mob').value;
-        const mobre = /[89][0-9]{9}/;
+        const mobre =  /^[89]\d{9}$/;
         if (!mobre.test(mob)) {
-            alert("Your mobile number :" +mob)
+            alert("Enter your 10 digit mobile number");
         } else {
-            alert("plase enter valid mobile number");
+            alert("mobile number updated");
         }
 
         //email
@@ -142,7 +142,7 @@
         var qual = document.getElementById('qual').value;
         var flength = qual.length;
         if (!qual != "") {
-            if (flength < 3 || flength > 4) {
+            if (flength > 1 || flength < 6) {
                 alert("qualification Must be 2 to 4");
             }
         } else {
