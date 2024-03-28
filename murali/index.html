@@ -102,14 +102,15 @@
             alert("email address id madatrory");
         }
         var dob = document.getElementById('dob').value;
-        if (dob = null){
-
+        if (dob !=""){
+            alert("dob is update")
         }else{
             alert("dob is madatrory")
         }
         var mob = document.getElementById("mob").value;
-        var lenmob = mob.length
-        if (mob = null){
+        const mobno=/^[98][0-9]{10}/
+        if (!mobno.test(mob)){
+            alert("enter your 10 digit mob no")
         }else{
             alert("plese enter mobile number")
         }
@@ -123,19 +124,19 @@
             alert("plese enter qualification")
         }
         var nation = document.getElementById('nation')
-        if(nation = null){
+        if(nation != ""){
 
         }else{
             alert("plese enter nation")
         }
         var state = document.getElementById('state')
-        if(nation = null){
+        if(state != ""){
 
         }else{
             alert("plese enter state")
         }
         var comment = document.getElementById('comment')
-        if(nation = null){
+        if(comment != ""){
 
         }else{
             alert("plese enter address")
