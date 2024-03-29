@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 </head>
+
 <body>
     <div class="container">
         <form methods="post" action="#">
@@ -21,82 +23,102 @@
                 <br>
                 <br>
                 <lable for="">Age :</lable>
-                <input type="number" placeholder="" class="" id="number" name="number">
+                <input type="number" placeholder="enter your age" class="" id="number" name="number">
                 <br>
                 <br>
                 <lable for=""> date of Birth :</lable>
-                <input type="date" placeholder="" class="" id="dob" name="dob">
-                <br> 
+                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob">
+                <br>
                 <br>
                 <lable for="">E-mail id :</lable>
-                <input type="email" placeholder="" class="" id="email" name="email">
-                <br> 
+                <input type="email" placeholder="enter your email-id" class="" id="email" name="email">
+                <br>
                 <br>
                 <lable for="">Qualification :</lable>
-                <input type="text" placeholder="" class="" id="qualify" name="qualify">
+                <input type="text" placeholder="enter your qualification" class="" id="qualify" name="qualify">
                 <br>
                 <br>
-                <input type="submit" value="submit" id="submit" name="submit" onclick = "validation()">
+                <lable fot="">Mobile number :</lable>
+                <input type="number" placeholder="enter your mobile number" class="" id="mobile" name="mobile">
+                <br>
+                <br>
+                <input type="submit" value="submit" id="submit" name="submit" onclick="validation()">
             </fieldset>
         </form>
     </div>
 </body>
 
-    
+
 <script>
-    function validation(){
-    var fname = document.getElementById('fname').value;
-    var lname = document.getElementById('lname').value;
-    var age = document.getElementById('number').value;
-    var dob = document.getElementById('dob').value;
-    var email = document.getElementById('email').value;
-    var qual = document.getElementById('qualify').value;
-    var flength = fname.length;
-    if (fname !=""){
-        if(flength < 3 || flength > 11){
-            alert("first name should be more than 3 and less than 11 characters");
+    function validation() {
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var age = document.getElementById('number').value;
+        var dob = document.getElementById('dob').value;
+        var email = document.getElementById('email').value;
+        var qual = document.getElementById('qualify').value;
+        var mobile = document.getElementById('mobile').value;
+        var flength = fname.length;
+        if (fname != "") {
+            if (flength < 3 || flength > 11) {
+                alert("first name should be more than 3 and less than 11 characters");
+            }
         }
-    }
-        else{
+        else {
             alert("first name is mandatory");
         }
-    
-    if (lname !=""){
-        if (flength < 3 || flength > 11){
-            alert("last name should be more than 3 and less than 11 characters");
+
+        if (lname != "") {
+            if (flength < 3 || flength > 11) {
+                alert("last name should be more than 3 and less than 11 characters");
+            }
         }
-    }
-        else{
+        else {
             alert("last name is mandatory");
         }
-    if (age !=""){
-        if (age < 18 || age > 50){
-            alert("age should be greater than 18 and less than 50 characters");
+        if (age != "") {
+            if (age < 18 || age > 50) {
+                alert("age should be greater than 18 and less than 50 characters");
+            }
         }
-    }
-        else{
+        else {
             alert("age name is mandatory");
         }
-    if (dob !=""){
-       
-        alert("dob should be in correct format");
-        }
-        else{
-            alert("dob is mandatory");
-        }
+        if (dob !="") {
+            alert("dob is submitted")}
+            else
+            {
+                alert("dob is mandatory");
+            }
+
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (email.match(emailPattern)) {
-            alert("enter your valid email");
+
         }
-        else{
+        else {
             alert("email is mandatory");
         }
-        if (qual !=""){
+        if (qual !="") {
+            alert("qualification is registered");
+        }
+        else{
+            alert("qualification is mandatory");
+        }
+        var mobilePattern = /^\+\d{2}\s\d{10}$/;
+        if (!mobilePattern.test(mobileNumber)) {
+        alert("please enter a valid phone number");
+        }
+        else{
+            alert("mobile number is registered")
+        }
+    
+    return true;
+        
        
-       alert("enter your original qualification");
-       }
-       else{
-           alert("qualification is mandatory");}
-}
+    
+
+
+    }      
 </script>
+
 </html>
