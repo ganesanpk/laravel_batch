@@ -30,7 +30,7 @@
                     <br>
                     <div>
                         <label for="">EMAIL:</label>
-                        <input type="mail" placeholder="Enter your mail" class="" id="email" name="email">
+                        <input type="email" placeholder="Enter your mail" class="" id="email" name="email">
                     </div>
                     <br>
                     <div>
@@ -90,11 +90,13 @@
                 alert("last name should be more than 3 and less than 11 character");
             }
         } else {
-            alert("last name is a madatrory")
+            alert("last name is a madatrory");
         }
+
         var email = document.getElementById('email').value;
-        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (email!="") {
+        
+        const mailformat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email !="") {
             if (email.test(mailformat)){
                 alert("enter mail id with format");
             }
