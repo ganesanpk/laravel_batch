@@ -115,10 +115,12 @@
         var mob = document.getElementById('mob').value;
         const mobre = /^[89][0-9]{9}$/;
         if (!mobre.test(mob)) {
+<<<<<<< HEAD
+            alert("Enter your 10 digit mobile number");
+=======
             alert("Your mobile number :" + mob);
-
         } else {
-            alert("plase enter valid mobile number");
+            alert("mobile number updated");
         }
         //emial 
         var email = document.getElementById('email').value;
@@ -129,7 +131,51 @@
             alert("Email Id Is Manditory");
         }
 
+        // password
+        var pass = document.getElementById('pass').value;
+        var flength = pass.length;
+        if (!pass != "") {
+            if (flength < 5 || flength > 7) {
+                alert("password should be morethen 5 and lessthan 7 charactor");
+            }
+        } else {
+            alert("Enter your password");
+        }
+        // confirm password
+
+        // function validation() {
+            var pass = document.getElementById('pass').value;
+            var conpass = document.getElementById('conpass').value;
+            if (!pass === conpass) {
+                alert("Passwords did not match");
+            } else {
+                alert("Password created successfully");
+            }
+        // }
+
+
+        // qualification
+        var qual = document.getElementById('qual').value;
+        var flength = qual.length;
+        if (!qual != "") {
+            if (flength < 1 || flength > 6) {
+                alert("qualification Must be 2 to 6");
+            }
+        } else {
+            alert("Qualification is maditary");
+        }
+
+        // date of joining
+        var jdate = document.getElementById('jdate').value;
+        if(jdate != ""){
+            alert("date of joining updated");
+        }else{
+            alert("date of joining must be mandititory");
+        }
+
     }
+
+
 </script>
 
 </html>

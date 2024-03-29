@@ -77,26 +77,22 @@
         else{
             alert("age name is mandatory");
         }
-    if (dob !=""){
-       
-        alert("dob should be in correct format");
-        }
-        else{
-            alert("dob is mandatory");
-        }
+    if (dob ==""){       
+         alert("dob is mandatory");
+        } 
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (email.match(emailPattern)) {
-            alert("enter your valid email");
+           
         }
         else{
             alert("email is mandatory");
         }
-        if (qual !=""){
+        if (qual ==""){
        
-       alert("enter your original qualification");
+            alert("enter your original qualification");
        }
-       else{
-           alert("qualification is mandatory");}
+       
 }
 </script>
 </html>
