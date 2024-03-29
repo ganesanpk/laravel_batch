@@ -71,7 +71,7 @@
         var fname = document.getElementById('fname').value;
         var flength = fname.length;
         if (fname != "") {
-            if (flength < 3 || flength > 12) {
+            if (flength > 3 || flength < 12) {
                 alert("First name upadeted")
             } else {
                 alert("First  Name  Should Be Morethan 3 and lessthan 12 charactor");
@@ -81,7 +81,7 @@
         }
 
         // last name
-        var lname = document.getElementById('lname').value;
+        // var lname = document.getElementById('lname').value;
         var flength = lname.length;
         if (lname != "") {
             if (flength < 3 || flength > 11) {
@@ -92,20 +92,26 @@
         } else {
             alert("Last name is manditory");
         }
+
         // age
         var age = document.getElementById('age').value;
+        var dobyear;
+        var year;
         var flength = age.length;
         if (age != null) {
-            if (age < 18 || age > 58) {
+            if (age > 18 || age < 58) {
                 alert("age must be 18 to 58");
             }
         } else {
             alert("age is manditaory");
         }
 
+
         // dob
         var dob = document.getElementById("dob").value;
         if (dob != "") {
+            datadob = new Date(dob)
+            dobyear = dobdate.getFullYear()
             alert("dob updated");
         } else {
             alert("Date Of Birth is Manditory");
@@ -115,10 +121,7 @@
         var mob = document.getElementById('mob').value;
         const mobre = /^[89][0-9]{9}$/;
         if (!mobre.test(mob)) {
-<<<<<<< HEAD
             alert("Enter your 10 digit mobile number");
-=======
-            alert("Your mobile number :" + mob);
         } else {
             alert("mobile number updated");
         }
@@ -133,8 +136,9 @@
 
         // password
         var pass = document.getElementById('pass').value;
+        const passre = /^[A-Z][a-z][@!-_ &][0-9]$/;
         var flength = pass.length;
-        if (!pass != "") {
+        if (!pass.test(passre)) {
             if (flength < 5 || flength > 7) {
                 alert("password should be morethen 5 and lessthan 7 charactor");
             }
@@ -143,35 +147,44 @@
         }
         // confirm password
 
-        // function validation() {
-            var pass = document.getElementById('pass').value;
-            var conpass = document.getElementById('conpass').value;
-            if (!pass === conpass) {
-                alert("Passwords did not match");
-            } else {
-                alert("Password created successfully");
-            }
-        // }
+        var conpass = document.getElementById('conpass').value;
+        if (!pass === conpass) {
+            alert("Passwords did not match");
+        } else {
+            alert("Password created successfully");
+        }
+
 
 
         // qualification
         var qual = document.getElementById('qual').value;
         var flength = qual.length;
         if (!qual != "") {
-            if (flength < 1 || flength > 6) {
+            if (flength > 1 || flength < 6) {
                 alert("qualification Must be 2 to 6");
             }
         } else {
             alert("Qualification is maditary");
         }
 
+
+
+
         // date of joining
         var jdate = document.getElementById('jdate').value;
-        if(jdate != ""){
-            alert("date of joining updated");
-        }else{
-            alert("date of joining must be mandititory");
+        alert(jdate);
+        var cdate = new Date(jdate);
+        alert(jdate);
+        year = cdate.getFullYear();
+        alert(year);
+        cage = age - dobyear;
+        if (age < cage) {
+            alert("ypur eligible");
+        } else {
+            alert("your not eligible");
         }
+
+
 
     }
 
