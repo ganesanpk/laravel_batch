@@ -30,38 +30,38 @@
                     <br>
                     <div>
                         <label for="">EMAIL:</label>
-                        <input type="mail" placeholder="Enter your mail" class="" id="email" name="email">
+                        <input type="email" placeholder="Enter your mail" class="" id="email" name="email">
                     </div>
                     <br>
                     <div>
                         <label for="">DATE OF BIRTH:</label>
-                        <input type="date" placeholder="Enter your DOB" class="" id="dob" name="fname">
+                        <input type="date" placeholder="Enter your DOB" class="" id="dob" name="dob">
                     </div>
                     <br>
                     <div>
                         <label for="">MOBILE NUMBER:</label>
-                        <input type="" placeholder="Enter your mobile number" class="" id="mob" name="fname">
+                        <input type="number" placeholder="Enter your mobile number" class="" id="mob" name="mob">
                     </div>
                     <br>
                     <div>
                         <label for="">QUALIFICATION:</label>
-                        <input type="text" placeholder="Enter your qualification" class="" id="quali">
+                        <input type="text" placeholder="Enter your qualification" class="" id="quali" name="quali">
                          
                     </div>
                     <br>
                     <div>
                         <label for="">NATIONALITY:</label>
-                        <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation">
+                        <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation" name="nation">
                     </div>
                     <br>
                     <div>
                         <label for="">STATE:</label>
-                        <input type="text" placeholder="Enter your state" class="" id="state" name="state">
+                        <input type="text" placeholder="Enter your state" class="" id="state" name="state" name="state">
                     </div>
                     <br>
                     <div>
                         <label for="">ADDERS:</label>
-                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                        <input type="text" placeholder=" enter your address" class=""id="add" name="add">
                     </div>
                     <br>
                     <div class="col-12">
@@ -86,12 +86,13 @@
         var lname = document.getElementById('lname').value;
         var llength = lname.length;
         if (fname != "") {
-            if (llength < 3 || llength > 11) {
+            if (llength < 1 || llength > 5) {
                 alert("last name should be more than 3 and less than 11 character");
             }
         } else {
-            alert("last name is a madatrory")
+            alert("last name is a madatrory");
         }
+
         var email = document.getElementById('email').value;
         var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (email!="") {
@@ -108,9 +109,11 @@
             alert("dob is madatrory")
         }
         var mob = document.getElementById("mob").value;
-        const mobno=/^[98][0-9]{10}/
-        if (!mobno.test(mob)){
+        const mobno=/^[0-9]{10}/;
+        if(mob !=""){
+            if (mobno.test(mob)){
             alert("enter your 10 digit mob no")
+            }
         }else{
             alert("plese enter mobile number")
         }
@@ -124,19 +127,19 @@
             alert("plese enter qualification")
         }
         var nation = document.getElementById('nation')
-        if(nation != ""){
+        if(nation = ""){
 
         }else{
             alert("plese enter nation")
         }
         var state = document.getElementById('state')
-        if(state != ""){
+        if(state = ""){
 
         }else{
             alert("plese enter state")
         }
         var comment = document.getElementById('comment')
-        if(comment != ""){
+        if(comment = ""){
 
         }else{
             alert("plese enter address")
