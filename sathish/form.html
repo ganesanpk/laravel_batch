@@ -111,11 +111,7 @@
         var mob = document.getElementById('mob').value;
         const mobre =  /^[89]\d{9}$/;
         if (!mobre.test(mob)) {
-<<<<<<< HEAD
-            alert("Enter your 10 digit mobile number");
-=======
             alert("Your mobile number :" + mob);
->>>>>>> 8bba546879c2a672b5d8d56a901f1fa83642a066
         } else {
             alert("mobile number updated");
         }
@@ -155,14 +151,9 @@
         // qualification
         var qual = document.getElementById('qual').value;
         var flength = qual.length;
-        if (!qual != "") {
-<<<<<<< HEAD
-            if (flength > 1 || flength < 6) {
-                alert("qualification Must be 2 to 4");
-=======
+        if (qual != "") {
             if (flength < 1 || flength > 6) {
                 alert("qualification Must be 2 to 6");
->>>>>>> 8bba546879c2a672b5d8d56a901f1fa83642a066
             }
         } else {
             alert("Qualification is maditary");
