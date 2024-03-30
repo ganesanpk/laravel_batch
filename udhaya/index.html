@@ -59,6 +59,7 @@
         var qual = document.getElementById('qualify').value;
         var mobile = document.getElementById('mobile').value;
         var flength = fname.length;
+        var mobilepattern = mobile.length;
         if (fname != "") {
             if (flength < 3 || flength > 11) {
                 alert("first name should be more than 3 and less than 11 characters");
@@ -104,7 +105,7 @@
         else{
             alert("qualification is mandatory");
         }
-        var mobilePattern = /^\+\d{2}\s\d{10}$/;
+        var mobilePattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
         if (!mobilePattern.test(mobileNumber)) {
         alert("please enter a valid phone number");
         }
