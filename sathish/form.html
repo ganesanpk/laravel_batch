@@ -180,17 +180,18 @@
         }
 
         // qualification
-        // var qual = document.getElementById('qual').value;
-        // var flength = qual.length;
-        // if (qual != "") {
-        //     if (flength > 2 || flength < 4) {
-        //         alert("qualification Must be 2 to 6");
-        //     }else{
-        //         alert("qualification submited");
-        //     }
-        // } else {
-        //     alert("Qualification is maditary");
-        // }
+        var qual = document.getElementById('qual').value;
+        var flength = qual.length;
+        const qualreg = /^[A-Za-z\d ().,]{1,8}$/;
+        if (!qualreg.test(qual)) {
+            if (flength > 2 || flength < 4) {
+                alert("qualification Must be 2 to 6");
+            }else{
+                alert("qualification submited");
+            }
+        } else {
+            alert("Qualification is maditary");
+        }
 
         // // date of joining
         var jdate = document.getElementById('jdate').value;
