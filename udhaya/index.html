@@ -57,65 +57,65 @@
         // var qual = document.getElementById('qualify').value;
         var mobile = document.getElementById('mobile').value;
         mobile = parent(mobile);
-        alert(mobile);
-        // var flength = fname.length;
-        // if (fname != "") {
-        //     if (flength < 3 || flength > 11) {
-        //         alert("first name should be more than 3 and less than 11 characters");
-        //     }
-        // }
-        // else {
-        //     alert("first name is mandatory");
-        // }
-
-        // if (lname != "") {
-        //     if (flength < 3 || flength > 11) {
-        //         alert("last name should be more than 3 and less than 11 characters");
-        //     }
-        // }
-        // else {
-        //     alert("last name is mandatory");
-        // }
-        // if (age != "") {
-        //     if (age < 18 || age > 50) {
-        //         alert("age should be greater than 18 and less than 50 characters");
-        //     }
-        // }
-        // else {
-        //     alert("age name is mandatory");
-        // }
-        // if (dob !="") {
-        //     alert("dob is submitted")}
-        //     else
-        //     {
-        //         alert("dob is mandatory");
-        //     }
-
-        // var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        // if (email.match(emailPattern)) {
-
-        // }
-        // else {
-        //     alert("email is mandatory");
-        // }
-        // if (qual !="") {
-        //     alert("qualification is registered");
-        // }
-        // else{
-        //     alert("qualification is mandatory");
-        // }
-
-        var mobilePattern = /^[89]\d{9}$/;  
-       console.log(mobile.test(mobilePattern));
-       console.error();
-        if (mobile.test(mobilePattern)){
-            alert("Mobile number registered");
-        }else{
-            alert("Please Enter valid numbers");
+<<<<<<< HEAD
+        var flength = fname.length;
+        var mobilepattern = mobile.length;
+        if (fname != "") {
+            if (flength < 3 || flength > 11) {
+                alert("first name should be more than 3 and less than 11 characters");
+            }
+        }
+        else {
+            alert("first name is mandatory");
         }
 
+        if (lname != "") {
+            if (flength < 3 || flength > 11) {
+                alert("last name should be more than 3 and less than 11 characters");
+            }
+        }
+        else {
+            alert("last name is mandatory");
+        }
+        if (age != "") {
+            if (age < 18 || age > 50) {
+                alert("age should be greater than 18 and less than 50 characters");
+            }
+        }
+        else {
+            alert("age name is mandatory");
+        }
+        if (dob !="") {
+            alert("dob is submitted")}
+            else
+            {
+                alert("dob is mandatory");
+            }
+
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email.match(emailPattern)) {
+
+        }
+        else {
+            alert("email is mandatory");
+        }
+        if (qual !="") {
+            alert("qualification is registered");
+        }
+        else{
+            alert("qualification is mandatory");
+        }
+        var mobilePattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+        if (!mobilePattern.test(mobileNumber)) {
+        alert("please enter a valid phone number");
+        }
+        else{
+            alert("mobile number is registered");
+        } 
+       
+
       
-    }    
+     }    
 </script>
 
 </html>
