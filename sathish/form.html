@@ -33,15 +33,12 @@
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="gender" id="gender" value="Male">Male
-                
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="gender" id="gender" value="Female">Female
-                <!-- <label class="form-check-label" for="inlineRadio2">female</label> -->
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="gender" id="gender" value="Others">Others
-                <!-- <label class="form-check-label" for="inlineRadio3">Others</label> -->
             </div>
             <div class=" col-md-6 mb-3">
                 <label for="" class="form-label">Date Of Birth</label>
@@ -107,18 +104,6 @@
             alert("Last name is manditory");
         }
 
-        // gender
-
-        var gender = document.getElementById('gender').value;
-        alert(gender);
-       
-
-        if (maleCheck.checked == false || femaleCheck.checked == false || OthersCheck.checked == false) {
-            alert("gender is submited");
-        } else {
-            alert("gender manditory");
-        }
-
         // age
         // var age = document.getElementById('age').value;
         // var dobyear;
@@ -132,6 +117,18 @@
         // } else {
         //     alert("Enter Your Age");
         // }
+
+
+        // gender
+        var gender = document.getElementById('gender').value;
+        alert(gender);
+
+        if (Male.checked == false || Female.checked == false || Others.checked == false) {
+            alert("gender is submited");
+        } else {
+            alert("gender manditory");
+        }
+
 
         // dob
         var dob = document.getElementById("dob").value;
@@ -164,7 +161,7 @@
         // // password
         var pass = document.getElementById('pass').value;
         var flength = pass.length;
-        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
         if (!passreg.test(pass)) {
             alert("please enter valid password")
         } else {
@@ -173,7 +170,7 @@
 
         // confirm password
         var conpass = document.getElementById('conpass').value;
-        if (pass != conpass) {
+        if (!pass == conpass) {
             alert("Password created successfully");
         } else {
             alert("Passwords did not match");
@@ -186,7 +183,7 @@
         if (!qualreg.test(qual)) {
             if (flength > 2 || flength < 4) {
                 alert("qualification Must be 2 to 6");
-            }else{
+            } else {
                 alert("qualification submited");
             }
         } else {
@@ -196,8 +193,11 @@
         // // date of joining
         var jdate = document.getElementById('jdate').value;
         cdate = new Date(jdate);
-        var year = cdate.getFullYear();
-        if ((year - dobyear) > 17) {
+        var cyear = cdate.getFullYear();
+        var dat = new Date(dob);
+        var dyear = dat.getFullYear();
+        var age = cyear - dyear
+        if (cyear - dyear) {
             alert("your eligible");
         } else {
             alert("your not eligible");
