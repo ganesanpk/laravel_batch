@@ -32,16 +32,16 @@
                 <label for="" class="form-label">Gender</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="maleCheck" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Male</label>
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Male">Male
+                
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="femaleCheck" value="option2">
-                <label class="form-check-label" for="inlineRadio2">female</label>
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Female">Female
+                <!-- <label class="form-check-label" for="inlineRadio2">female</label> -->
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="OthersCheck" value="option3">
-                <label class="form-check-label" for="inlineRadio3">Others</label>
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Others">Others
+                <!-- <label class="form-check-label" for="inlineRadio3">Others</label> -->
             </div>
             <div class=" col-md-6 mb-3">
                 <label for="" class="form-label">Date Of Birth</label>
@@ -107,32 +107,11 @@
             alert("Last name is manditory");
         }
 
-<<<<<<< HEAD
-        // age
-        var age = document.getElementById('age').value;
-        var dobyear;
-        var year;
-        // if (age != null) {
-        //     if (age < 18 || age > 58) {
-        //         alert("Age Must be 18 to 58");
-        //     } else {
-        //         alert("Age is updated");
-        //     }
-        // } else {
-        //     alert("Enter Your Age");
-        // }
-
-        // dob
-        var dob = document.getElementById("dob").value;
-        if (dob != "") {
-             dobdate = new Date(dob);
-             dobyear = dobdate.getFullYear();
-=======
         // gender
 
-        var gender = document.getElementById('maleCheck').value;
-        var gender = document.getElementById('femaleCheck').value;
-        var gender = document.getElementById('OthersCheck').value;
+        var gender = document.getElementById('gender').value;
+        alert(gender);
+       
 
         if (maleCheck.checked == false || femaleCheck.checked == false || OthersCheck.checked == false) {
             alert("gender is submited");
@@ -159,7 +138,6 @@
         if (dob != "") {
             dobdate = new Date(dob);
             dobyear = dobdate.getFullYear();
->>>>>>> 68a7a84409b374cbec54f6c64d47db447ad25b13
             alert("dob updated");
         } else {
             alert("Date Of Birth is Manditory");
@@ -186,11 +164,7 @@
         // // password
         var pass = document.getElementById('pass').value;
         var flength = pass.length;
-<<<<<<< HEAD
-        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
-=======
         const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
->>>>>>> 68a7a84409b374cbec54f6c64d47db447ad25b13
         if (!passreg.test(pass)) {
             alert("please enter valid password")
         } else {
@@ -199,11 +173,7 @@
 
         // confirm password
         var conpass = document.getElementById('conpass').value;
-<<<<<<< HEAD
-        if (pass == conpass) {
-=======
         if (pass != conpass) {
->>>>>>> 68a7a84409b374cbec54f6c64d47db447ad25b13
             alert("Password created successfully");
         } else {
             alert("Passwords did not match");
@@ -212,14 +182,9 @@
         // qualification
         var qual = document.getElementById('qual').value;
         var flength = qual.length;
-<<<<<<< HEAD
-        if (qual != "") {
-            if (flength > 1 || flength < 4) {
-=======
         const qualreg = /^[A-Za-z\d ().,]{1,8}$/;
         if (!qualreg.test(qual)) {
             if (flength > 2 || flength < 4) {
->>>>>>> 68a7a84409b374cbec54f6c64d47db447ad25b13
                 alert("qualification Must be 2 to 6");
             }else{
                 alert("qualification submited");

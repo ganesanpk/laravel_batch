@@ -19,7 +19,7 @@
                 <form action="#" method="post">
                     <div>
                         <label for="">FIRST NAME:</label>
-                        <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname">
+                        <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname" minlength="4" maxlength="10">
                     </div>
                     <br>
                     <div>
@@ -40,7 +40,7 @@
                     <br>
                     <div>
                         <label for="">MOBILE NUMBER:</label>
-                        <input type="number" placeholder="Enter your mobile number" class="" id="mob" name="mob">
+                        <input type="text" placeholder="Enter your mobile number" class="" id="mob" name="mob" maxlength="10">
                     </div>
                     <br>
                     <div>
@@ -75,6 +75,8 @@
 <script>
     function valiation() {
         var fname = document.getElementById('fname').value;
+        var mob = document.getElementById('mob').value;
+        alert(mob);
         var flength = fname.length;
         if (fname != "") {
             if (flength < 3 || flength > 16) {
@@ -104,23 +106,14 @@
         } else {
             alert("email address id madatrory");
         }
+        
         var dob = document.getElementById('dob').value;
         if (dob !=""){
             alert("dob is update")
         }else{
             alert("dob is madatrory")
-        }
-        var mob = parseInt(document.getElementById("mob").value)
+        }        
         
-        
-        const mobno=/^[89][0-9]{10}/;
-        if(mob !=""){
-            if (mobno.test(mob)){
-            alert("enter your 10 digit mob no")
-            }
-        }else{
-            alert("plese enter mobile number")
-        }
         var quali = document.getElementById('quali').value;
         var flength= quali.lenght;
         if(quali != ""){
@@ -148,6 +141,18 @@
         }else{
             alert("plese enter address")
         }
+
+         // var mob = parseInt(document.getElementById("mob").value)        
+        aler(mob);
+        const mobno=/^[89][0-9]{10}/;
+        if(mob !=""){
+            if (mobno.test(mob)){
+            alert("enter your 10 digit mob no")
+            }
+        }else{
+            alert("plese enter mobile number")
+        }
+
     }
 
 
