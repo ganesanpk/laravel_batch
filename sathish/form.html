@@ -122,19 +122,19 @@
         // gender
         var gendername = document.getElementsByName('gender');
         var gender = "";
-        for (var i=0; i<gendername.length; i++){
-            if(gendername[i].checked){
-                gender=gendername[i].value;
+        for (var i = 0; i < gendername.length; i++) {
+            if (gendername[i].checked) {
+                gender = gendername[i].value;
                 break;
             }
         }
-        if(gender == ""){
+        if (gender == "") {
             alert("please select gender");
-        }else{
-            alert("selected gender : "+gender);   
+        } else {
+            alert("selected gender : " + gender);
         }
 
-        
+
 
         // dob
         var dob = document.getElementById("dob").value;
@@ -168,10 +168,14 @@
         var pass = document.getElementById('pass').value;
         var flength = pass.length;
         const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
-        if (!passreg.test(pass)) {
-            alert("please enter valid password")
+        if (pass != "") {
+            if (!passreg.test(pass)) {
+                alert("please enter valid password")
+            } else {
+                alert("password updated")
+            }
         } else {
-            alert("password updated")
+            alert("password is mandatory");
         }
 
         // confirm password
@@ -197,13 +201,23 @@
         }
 
         // // date of joining
+        var dob = document.getElementById('dob').value;
         var jdate = document.getElementById('jdate').value;
-        cdate = new Date(jdate);
+        var cdate = new Date();
+        var dobd = new Date(dob);
         var cyear = cdate.getFullYear();
-        var dat = new Date(dob);
-        var dyear = dat.getFullYear();
-        var age = cyear - dyear
-        if (cyear - dyear) {
+        var dobyear = dobd.getFullYear();
+        var age = cyear - dobyear;
+        var cmonth = cdate -getMonth();
+        var dobmonth = dobd.getMonth();
+        var mon = cmonth-dobmonth; 
+
+        if(mon > 0){
+            age = age-1;
+            mon = mon-12;
+        }
+        alert("your age is"+age +""+"month"+""+mon)
+        if (age >= 18) {
             alert("your eligible");
         } else {
             alert("your not eligible");
