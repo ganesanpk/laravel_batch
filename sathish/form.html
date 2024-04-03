@@ -120,15 +120,21 @@
 
 
         // gender
-        var gender = document.getElementById('gender').value;
-        alert(gender);
-
-        if (Male.checked == false || Female.checked == false || Others.checked == false) {
-            alert("gender is submited");
-        } else {
-            alert("gender manditory");
+        var gendername = document.getElementsByName('gender');
+        var gender = "";
+        for (var i=0; i<gendername.length; i++){
+            if(gendername[i].checked){
+                gender=gendername[i].value;
+                break;
+            }
+        }
+        if(gender == ""){
+            alert("please select gender");
+        }else{
+            alert("selected gender : "+gender);   
         }
 
+        
 
         // dob
         var dob = document.getElementById("dob").value;
