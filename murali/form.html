@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container p-4">
+        <div class="p-2 mb-3 fs-2">Bio Data</div>
+        <form action="#" name="myForm" onsubmit="return validation()" method="post">
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Date Of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Mobile Number</label>
+                <input type="number" class="form-control" id="mob" name="mob" placeholder="Enter Mobile Number">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Password</label>
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter password">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="conpass" name="conpass" placeholder="Enter password">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Qualification</label>
+                <input type="text" class="form-control" id="qual" name="qual" placeholder="Enter Qualification">
+            </div>
+            <div class=" col-md-6 mb-3">
+                <label for="" class="form-label">Date Of Joining</label>
+                <input type="date" class="form-control" id="jdate" name="jdate" placeholder="Enter Join Date">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" id="submit" name="submit-btn"
+                    value="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+<script>
+    function validation() {
+        // first name
+        var fname = document.getElementById('fname').value;
+        var flength = fname.length;
+        if (fname != "") {
+            if (flength < 3 || flength > 16) {
+                alert("First  Name  Should Be morethen 3 and lessthan 11 charactor");
+            } else {
+                alert("first name submitted");
+            }
+        } else {
+            alert("First Name Is Manditory");
+        }
+
+        // last name
+        var lname = document.getElementById('lname').value;
+        var flength = lname.length;
+        if (lname != "") {
+            if (flength < 1 || flength > 11) {
+                alert("last name should be morethen 2 and lessthan 11 charactor");
+            } else {
+                alert("Last name submitted");
+            }
+        } else {
+            alert("Last name is manditory");
+        }
+
+        // age
+        var age = document.getElementById('age').value;
+        var dobyear;
+        var year;
+        // if (age != null) {
+        //     if (age < 18 || age > 58) {
+        //         alert("Age Must be 18 to 58");
+        //     } else {
+        //         alert("Age is updated");
+        //     }
+        // } else {
+        //     alert("Enter Your Age");
+        // }
+
+        // dob
+        var dob = document.getElementById("dob").value;
+        if (dob != "") {
+             dobdate = new Date(dob);
+             dobyear = dobdate.getFullYear();
+            alert("dob updated");
+        } else {
+            alert("Date Of Birth is Manditory");
+        }
+
+        // mobile
+        var mob = document.getElementById('mob').value;
+        const mobre = /^[89]\d{9}$/;
+        if (!mobre.test(mob)) {
+            alert("Enter your 10 digit mobile number");
+        } else {
+            alert("mobile number updated");
+        }
+
+        // //email
+        var email = document.getElementById('email').value;
+        const mailreg = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
+        if (!mailreg.test(email)) {
+            alert("Enter email id with format");
+        } else {
+            alert("Email Id Is updated");
+        }
+
+        // // password
+        var pass = document.getElementById('pass').value;
+        var flength = pass.length;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+        if (!passreg.test(pass)) {
+            alert("please enter valid password")
+        } else {
+            alert("password updated")
+        }
+
+        // confirm password
+        var conpass = document.getElementById('conpass').value;
+        if (pass != conpass) {
+            alert("Password created successfully");
+        } else {
+            alert("Passwords did not match");
+        }
+
+        // qualification
+        // var qual = document.getElementById('qual').value;
+        // var flength = qual.length;
+        // if (qual != "") {
+        //     if (flength > 2 || flength < 4) {
+        //         alert("qualification Must be 2 to 6");
+        //     }else{
+        //         alert("qualification submited");
+        //     }
+        // } else {
+        //     alert("Qualification is maditary");
+        // }
+
+        // // date of joining
+        var jdate = document.getElementById('jdate').value;
+        cdate = new Date(jdate);
+        var year = cdate.getFullYear();
+        if ((year - dobyear) > age) {
+            alert("your eligible");
+        } else {
+            alert("your not eligible");
+        }
+
+    }
+
+
+</script>
+
+</html>
