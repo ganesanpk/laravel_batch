@@ -120,6 +120,17 @@
 
 
         // gender
+
+        var gender = document.getElementById('gender').value;
+        alert(gender);
+
+        if (Male.checked == false || Female.checked == false || Others.checked == false) {
+            alert("gender is submited");
+        } else {
+            alert("gender manditory");
+        }
+
+
         var gendername = document.getElementsByName('gender');
         var gender = "";
         for (var i = 0; i < gendername.length; i++) {

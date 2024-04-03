@@ -15,17 +15,17 @@
     <div class="container">
         <div class="bor">
             <div class="container">
-                <div class="text-center h1">BIO DATA</div>
+                <div class="text-center h1">FORM VALIATION</div>
                 <form action="#" method="post">
                     <div>
                         <label for="">FIRST NAME:</label>
-                        <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname" minlength="4" maxlength="10">
+                        <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname">
                     </div>
                     <br>
                     <div>
                         <label for="">LAST NAME:</label>
                         <input type="text" placeholder="Enter last Name" class="" id="lname" name="lname">
-                         
+
                     </div>
                     <br>
                     <div>
@@ -40,18 +40,27 @@
                     <br>
                     <div>
                         <label for="">MOBILE NUMBER:</label>
-                        <input type="text" placeholder="Enter your mobile number" class="" id="mob" name="mob" maxlength="10">
+                        <input type="number" placeholder="Enter your mobile number" class="" id="mob" name="mob">
                     </div>
                     <br>
                     <div>
                         <label for="">QUALIFICATION:</label>
                         <input type="text" placeholder="Enter your qualification" class="" id="quali" name="quali">
-                         
+
                     </div>
                     <br>
                     <div>
+                        <label for="">PASSWORD:</label>
+                        <input type="password" placeholder="Enter your password" class="" id="pass" name="pass">
+                    </div><br>
+                    <div >
+                        <label for="">CONFORM PASSWORD:</label>
+                        <input type="password" placeholder="Enter your conform password" class="" id="cpass" name="cpass">
+                    </div><br>
+                    <div>
                         <label for="">NATIONALITY:</label>
-                        <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation" name="nation">
+                        <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation"
+                            name="nation">
                     </div>
                     <br>
                     <div>
@@ -61,9 +70,13 @@
                     <br>
                     <div>
                         <label for="">ADDERS:</label>
-                        <input type="text" placeholder=" enter your address" class=""id="add" name="add">
+                        <input type="text" placeholder=" enter your address" class="" id="add" name="add">
                     </div>
                     <br>
+                    <div>
+                        <label for="">JOINING DATE:</label>
+                        <input type="date"placeholder="Enter your join date" class=""id="jdate" name="jdate">
+                    </div><br>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit" onclick="valiation()">Submit form</button>
                     </div>
@@ -75,8 +88,6 @@
 <script>
     function valiation() {
         var fname = document.getElementById('fname').value;
-        var mob = document.getElementById('mob').value;
-        alert(mob);
         var flength = fname.length;
         if (fname != "") {
             if (flength < 3 || flength > 16) {
@@ -89,68 +100,83 @@
         var llength = lname.length;
         if (lname != "") {
             if (llength < 1 || llength > 5) {
-                alert("last name should be more than 3 and less than 11 character");
+                alert("last name should be more than 1 and less than 5 character");
             }
         } else {
             alert("last name is a madatrory");
         }
 
         var email = document.getElementById('email').value;
-        var mailformat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email !="") {
-            if (mailformat.test(email)){
-                alert("mail updated");
-            }else{
-                alert("Please enter formated mail");
+        var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
+        if (!mailformat.test(email)) {
+            alert("enter mail id with formate");
+        } else {
+            alert("email id is update");
+        }
+        var dob = document.getElementById('dob').value;
+        if (dob != "") {
+            dobdate = new Date(dob);
+            dobyear = dobdate.getFullYear();
+            alert("dob is update");
+        } else {
+            alert("dob is madatrory");
+        }
+        var mob = document.getElementById("mob").value;
+        const mobno = /^[89][0-9]{9}/;
+        if (!mobno.test(mob)) {
+                alert("enter your 10 digit mob no with format");
+        }else {
+            alert("mobile number is update");
+        }
+        var quali = document.getElementById('quali').value;
+        var lquali = quali.lenght;
+        if (quali != "") {
+            if (lquali >=2 ||lquali <=5) {
+                alert("qualification length must be less 2 or high 5");
             }
         } else {
-            alert("email address id madatrory");
+            alert("plese enter qualification");
         }
-        
-        var dob = document.getElementById('dob').value;
-        if (dob !=""){
-            alert("dob is update")
-        }else{
-            alert("dob is madatrory")
-        }        
-        
-        var quali = document.getElementById('quali').value;
-        var flength= quali.lenght;
-        if(quali != ""){
-            if(flength >=2|| flength<=5){
-                alert("flength must be less 2 or high 5")
-            }
-        }else{
-            alert("plese enter qualification")
+        // password
+         var pass = document.getElementById('pass').value;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+        if (!passreg.test(pass)) {
+            alert("please enter valid password")
+        } else {
+            alert("password updated")
         }
-        var nation = document.getElementById('nation')
-        if(nation = ""){
+        // confirm password
+        var cpass = document.getElementById('cpass').value;
+        if (pass = cpass) {
+            alert("Password created successfully");
+        } else {
+            alert("Passwords did not match");
+        }
+        var nation = document.getElementById('nation').value;
+        if (nation != "") {
 
-        }else{
-            alert("plese enter nation")
+        } else {
+            alert("plese enter nation");
         }
-        var state = document.getElementById('state')
-        if(state = ""){
+        var state = document.getElementById('state').value;
+        if (state != "") {
 
-        }else{
-            alert("plese enter state")
+        } else {
+            alert("plese enter state");
         }
-        var comment = document.getElementById('comment')
-        if(comment = ""){
+        var add = document.getElementById('add').value;
+        if (add != "") {
 
-        }else{
-            alert("plese enter address")
+        } else {
+            alert("plese enter address");
         }
-
-         // var mob = parseInt(document.getElementById("mob").value)        
-        aler(mob);
-        const mobno=/^[89][0-9]{10}/;
-        if(mob !=""){
-            if (mobno.test(mob)){
-            alert("enter your 10 digit mob no")
-            }
-        }else{
-            alert("plese enter mobile number")
+       var jdate=document.getElementById('jdate').value;
+       cdate = new Date(jdate);
+        var year = cdate.getFullYear();
+        if ((year - dobyear) >= 18) {
+            alert("your eligible");
+        } else {
+            alert("your not eligible");
         }
 
     }
