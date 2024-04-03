@@ -15,16 +15,29 @@
     <div class="container">
         <div class="bor">
             <div class="container">
+<<<<<<< HEAD
                 <div class="text-center h1">FORM VALIATION</div>
                 <form action="#" method="post">
                     <div>
                         <label for="">FIRST NAME:</label>
                         <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname">
+=======
+                <div class="text-center h1">BIO DATA</div>
+                <form action="#" method="post">
+                    <div>
+                        <label for="">FIRST NAME:</label>
+                        <input type="text" placeholder="Enter First Name" class="" id="fname" name="fname" minlength="4" maxlength="10">
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
                     </div>
                     <br>
                     <div>
                         <label for="">LAST NAME:</label>
                         <input type="text" placeholder="Enter last Name" class="" id="lname" name="lname">
+<<<<<<< HEAD
+
+=======
+                         
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
                     </div>
                     <br>
                     <div>
@@ -39,12 +52,18 @@
                     <br>
                     <div>
                         <label for="">MOBILE NUMBER:</label>
+<<<<<<< HEAD
                         <input type="number" placeholder="Enter your mobile number" class="" id="mob" name="mob">
+=======
+                        <input type="text" placeholder="Enter your mobile number" class="" id="mob" name="mob" maxlength="10">
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
                     </div>
                     <br>
                     <div>
                         <label for="">QUALIFICATION:</label>
                         <input type="text" placeholder="Enter your qualification" class="" id="quali" name="quali">
+<<<<<<< HEAD
+
                     </div>
                     <br>
                     <div>
@@ -57,6 +76,13 @@
                     </div><br>
                     <div>
                         <label for="">NATIONALITY:</label>
+                        <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation"
+                            name="nation">
+                         
+                    </div>
+                    <br>
+                    <div>
+                        <label for="">NATIONALITY:</label>
                         <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation" name="nation">
                     </div>
                     <br>
@@ -67,6 +93,7 @@
                     <br>
                     <div>
                         <label for="">ADDERS:</label>
+<<<<<<< HEAD
                         <input type="text" placeholder=" enter your address" class="" id="add" name="add">
                     </div>
                     <br>
@@ -74,9 +101,11 @@
                         <label for="">JOINING DATE:</label>
                         <input type="date"placeholder="Enter your join date" class=""id="jdate" name="jdate">
                     </div><br>
+=======
                         <input type="text" placeholder=" enter your address" class=""id="add" name="add">
                     </div>
                     <br>
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit" onclick="valiation()">Submit form</button>
                     </div>
@@ -88,8 +117,11 @@
 <script>
     function valiation() {
         var fname = document.getElementById('fname').value;
+<<<<<<< HEAD
+=======
         var mob = document.getElementById('mob').value;
         alert(mob);
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
         var flength = fname.length;
         if (fname != "") {
             if (flength < 3 || flength > 16) {
@@ -102,13 +134,18 @@
         var llength = lname.length;
         if (lname != "") {
             if (llength < 1 || llength > 5) {
+<<<<<<< HEAD
                 alert("last name should be more than 1 and less than 5 character");
+=======
+                alert("last name should be more than 3 and less than 11 character");
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
             }
         } else {
             alert("last name is a madatrory");
         }
 
         var email = document.getElementById('email').value;
+<<<<<<< HEAD
         var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
         if (!mailformat.test(email)) {
             alert("enter mail id with formate");
@@ -179,6 +216,63 @@
             alert("your eligible");
         } else {
             alert("your not eligible");
+=======
+        var mailformat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email !="") {
+            if (mailformat.test(email)){
+                alert("mail updated");
+            }else{
+                alert("Please enter formated mail");
+            }
+        } else {
+            alert("email address id madatrory");
+        }
+        
+        var dob = document.getElementById('dob').value;
+        if (dob !=""){
+            alert("dob is update")
+        }else{
+            alert("dob is madatrory")
+        }        
+        
+        var quali = document.getElementById('quali').value;
+        var flength= quali.lenght;
+        if(quali != ""){
+            if(flength >=2|| flength<=5){
+                alert("flength must be less 2 or high 5")
+            }
+        }else{
+            alert("plese enter qualification")
+        }
+        var nation = document.getElementById('nation')
+        if(nation = ""){
+
+        }else{
+            alert("plese enter nation")
+        }
+        var state = document.getElementById('state')
+        if(state = ""){
+
+        }else{
+            alert("plese enter state")
+        }
+        var comment = document.getElementById('comment')
+        if(comment = ""){
+
+        }else{
+            alert("plese enter address")
+        }
+
+         // var mob = parseInt(document.getElementById("mob").value)        
+        aler(mob);
+        const mobno=/^[89][0-9]{10}/;
+        if(mob !=""){
+            if (mobno.test(mob)){
+            alert("enter your 10 digit mob no")
+            }
+        }else{
+            alert("plese enter mobile number")
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
         }
 
     }

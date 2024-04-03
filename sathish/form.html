@@ -120,6 +120,7 @@
 
 
         // gender
+<<<<<<< HEAD
         var gender = document.getElementById('gender').value;
         alert(gender);
 
@@ -129,6 +130,23 @@
             alert("gender manditory");
         }
 
+=======
+        var gendername = document.getElementsByName('gender');
+        var gender = "";
+        for (var i=0; i<gendername.length; i++){
+            if(gendername[i].checked){
+                gender=gendername[i].value;
+                break;
+            }
+        }
+        if(gender == ""){
+            alert("please select gender");
+        }else{
+            alert("selected gender : "+gender);   
+        }
+
+        
+>>>>>>> 635b978752836e124a289752ef2eb1e71b15affb
 
         // dob
         var dob = document.getElementById("dob").value;
