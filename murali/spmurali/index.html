@@ -26,8 +26,19 @@
                         <label for="">LAST NAME:</label>
                         <input type="text" placeholder="Enter last Name" class="" id="lname" name="lname">
 
+                    </div><br>
+                    <div>
+                        <label for="">GENDER:</label>
                     </div>
-                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="gender" value="Male">Male
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="gender" value="Female">Female
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="gender" value="Others">Others
+                    </div>
                     <div>
                         <label for="">EMAIL:</label>
                         <input type="email" placeholder="Enter your mail" class="" id="email" name="email">
@@ -53,9 +64,10 @@
                         <label for="">PASSWORD:</label>
                         <input type="password" placeholder="Enter your password" class="" id="pass" name="pass">
                     </div><br>
-                    <div >
+                    <div>
                         <label for="">CONFORM PASSWORD:</label>
-                        <input type="password" placeholder="Enter your conform password" class="" id="cpass" name="cpass">
+                        <input type="password" placeholder="Enter your conform password" class="" id="cpass"
+                            name="cpass">
                     </div><br>
                     <div>
                         <label for="">NATIONALITY:</label>
@@ -74,8 +86,8 @@
                     </div>
                     <br>
                     <div>
-                        <label for="">JOINING DATE:</label>
-                        <input type="date"placeholder="Enter your join date" class=""id="jdate" name="jdate">
+                        <label for="">APPLY DATE:</label>
+                        <input type="date" placeholder="Enter your join date" class="" id="jdate" name="jdate">
                     </div><br>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit" onclick="valiation()">Submit form</button>
@@ -87,6 +99,7 @@
 </body>
 <script>
     function valiation() {
+        // first name
         var fname = document.getElementById('fname').value;
         var flength = fname.length;
         if (fname != "") {
@@ -96,6 +109,7 @@
         } else {
             alert("first name is a madatrory")
         }
+        // last name
         var lname = document.getElementById('lname').value;
         var llength = lname.length;
         if (lname != "") {
@@ -105,7 +119,21 @@
         } else {
             alert("last name is a madatrory");
         }
-
+        // gender
+        var gendername = document.getElementsByName('gender');
+        var gender = "";
+        for (var i = 0; i < gendername.length; i++) {
+            if (gendername[i].checked) {
+                gender = gendername[i].value;
+                break;
+            }
+        }
+        if (gender == "") {
+            alert("please select gender");
+        } else {
+            alert("selected gender : " + gender);
+        }
+        // email
         var email = document.getElementById('email').value;
         var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
         if (!mailformat.test(email)) {
@@ -113,6 +141,7 @@
         } else {
             alert("email id is update");
         }
+        // date of birth
         var dob = document.getElementById('dob').value;
         if (dob != "") {
             dobdate = new Date(dob);
@@ -121,24 +150,26 @@
         } else {
             alert("dob is madatrory");
         }
+        // mobile number
         var mob = document.getElementById("mob").value;
         const mobno = /^[89][0-9]{9}/;
         if (!mobno.test(mob)) {
-                alert("enter your 10 digit mob no with format");
-        }else {
+            alert("enter your 10 digit mob no with format");
+        } else {
             alert("mobile number is update");
         }
+        // qualification
         var quali = document.getElementById('quali').value;
         var lquali = quali.lenght;
         if (quali != "") {
-            if (lquali >=2 ||lquali <=5) {
+            if (lquali >= 2 || lquali <= 5) {
                 alert("qualification length must be less 2 or high 5");
             }
         } else {
             alert("plese enter qualification");
         }
         // password
-         var pass = document.getElementById('pass').value;
+        var pass = document.getElementById('pass').value;
         const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
         if (!passreg.test(pass)) {
             alert("please enter valid password")
@@ -152,26 +183,30 @@
         } else {
             alert("Passwords did not match");
         }
+        // nation
         var nation = document.getElementById('nation').value;
         if (nation != "") {
 
         } else {
             alert("plese enter nation");
         }
+        // state
         var state = document.getElementById('state').value;
         if (state != "") {
 
         } else {
             alert("plese enter state");
         }
+        // adderss
         var add = document.getElementById('add').value;
         if (add != "") {
 
         } else {
             alert("plese enter address");
         }
-       var jdate=document.getElementById('jdate').value;
-       cdate = new Date(jdate);
+        // join date
+        var jdate = document.getElementById('jdate').value;
+        cdate = new Date(jdate);
         var year = cdate.getFullYear();
         if ((year - dobyear) >= 18) {
             alert("your eligible");
