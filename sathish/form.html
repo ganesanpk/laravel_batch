@@ -79,62 +79,62 @@
 <script>
     function validation() {
         // first name
-        // var fname = document.getElementById('fname').value;
-        // var flength = fname.length;
-        // if (fname != "") {
-        //     if (flength < 3 || flength > 16) {
-        //         alert("First  Name  Should Be morethen 3 and lessthan 11 charactor");
+        var fname = document.getElementById('fname').value;
+        var flength = fname.length;
+        if (fname != "") {
+            if (flength < 3 || flength > 16) {
+                alert("First  Name  Should Be morethen 3 and lessthan 11 charactor");
+            } else {
+                alert("first name submitted");
+            }
+        } else {
+            alert("First Name Is Manditory");
+        }
+
+        // last name
+        var lname = document.getElementById('lname').value;
+        var flength = lname.length;
+        if (lname != "") {
+            if (flength < 1 || flength > 11) {
+                alert("last name should be morethen 2 and lessthan 11 charactor");
+            } else {
+                alert("Last name submitted");
+            }
+        } else {
+            alert("Last name is manditory");
+        }
+
+        // age
+        // var age = document.getElementById('age').value;
+        // var dobyear;
+        // var year;
+        // if (age != null) {
+        //     if (age < 18 || age > 58) {
+        //         alert("Age Must be 18 to 58");
         //     } else {
-        //         alert("first name submitted");
+        //         alert("Age is updated");
         //     }
         // } else {
-        //     alert("First Name Is Manditory");
+        //     alert("Enter Your Age");
         // }
 
-        // // last name
-        // var lname = document.getElementById('lname').value;
-        // var flength = lname.length;
-        // if (lname != "") {
-        //     if (flength < 1 || flength > 11) {
-        //         alert("last name should be morethen 2 and lessthan 11 charactor");
-        //     } else {
-        //         alert("Last name submitted");
-        //     }
-        // } else {
-        //     alert("Last name is manditory");
-        // }
 
-        // // age
-        // // var age = document.getElementById('age').value;
-        // // var dobyear;
-        // // var year;
-        // // if (age != null) {
-        // //     if (age < 18 || age > 58) {
-        // //         alert("Age Must be 18 to 58");
-        // //     } else {
-        // //         alert("Age is updated");
-        // //     }
-        // // } else {
-        // //     alert("Enter Your Age");
-        // // }
+        // gender
+        var gendername = document.getElementsByName('gender');
+        var gender = "";
+        for (var i = 0; i < gendername.length; i++) {
+            if (gendername[i].checked) {
+                gender = gendername[i].value;
+                break;
+            }
+        }
+        if (gender == "") {
+            alert("please select gender");
+        } else {
+            alert("selected gender : " + gender);
+        }
 
 
-        // // gender
-        // var gendername = document.getElementsByName('gender');
-        // var gender = "";
-        // for (var i=0; i<gendername.length; i++){
-        //     if(gendername[i].checked){
-        //         gender=gendername[i].value;
-        //         break;
-        //     }
-        // }
-        // if(gender == ""){
-        //     alert("please select gender");
-        // }else{
-        //     alert("selected gender : "+gender);   
-        // }
-
-        
 
         // // dob
         // var dob = document.getElementById("dob").value;
@@ -164,27 +164,27 @@
         //     alert("Email Id Is updated");
         // }
 
-        // // // password
-        // var pass = document.getElementById('pass').value;
-        // var flength = pass.length;
-        // const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
-        // if(pass !=""){
-        //     if (!passreg.test(pass)) {
-        //     alert("please enter valid password")
-        // } else {
-        //     alert("password updated")
-        // }
-        // }else{
-        //     alert("password is mandatory");
-        // }
+        // // password
+        var pass = document.getElementById('pass').value;
+        var flength = pass.length;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
+        if (pass != "") {
+            if (!passreg.test(pass)) {
+                alert("please enter valid password")
+            } else {
+                alert("password updated")
+            }
+        } else {
+            alert("password is mandatory");
+        }
 
-        // // confirm password
-        // var conpass = document.getElementById('conpass').value;
-        // if (pass == conpass) {
-        //     alert("Password created successfully");
-        // } else {
-        //     alert("Passwords did not match");
-        // }
+        // confirm password
+        var conpass = document.getElementById('conpass').value;
+        if (!pass == conpass) {
+            alert("Password created successfully");
+        } else {
+            alert("Passwords did not match");
+        }
 
         // // qualification
         // var qual = document.getElementById('qual').value;
@@ -201,33 +201,29 @@
         // }
 
         // // date of joining
-    
-    var dob = document.getElementById('dob').value;
-    var jdate =document.getElementById('jdate').value;
-    var cdate =new Date();
-    var dobd = new Date(dob);
-    var cyear = cdate.getFullYear();
-    var dobyear = dobd.getFullYear();
-    var age = cyear - dobyear;
-    var cmonth = cdate.getMonth();
-    var dobmonth = dobd.getMonth();
-    var mon = cmonth - dobmonth;
-    if(mon >0){
-        age = age-1;
-        mon = 12 - mon;
-        mon*=-1;
-    }
-    alert("Your age is"+age+" "+"Month"+" "+mon1);
+        var dob = document.getElementById('dob').value;
+        var jdate = document.getElementById('jdate').value;
+        var cdate = new Date();
+        var dobd = new Date(dob);
+        var cyear = cdate.getFullYear();
+        var dobyear = dobd.getFullYear();
+        var age = cyear - dobyear;
+        var cmonth = cdate -getMonth();
+        var dobmonth = dobd.getMonth();
+        var mon = cmonth-dobmonth; 
 
-    
-    if(age >= 18){
-        alert("Your are eligible");
-    }else{
-        alert ("your not eligible");
-    }
-function changeSign(mon){
-    return -mon;
-}
+        if(mon > 0){
+            age = age-1;
+            mon = mon-12;
+        }
+        alert("your age is"+age +""+"month"+""+mon)
+        if (age >= 18) {
+            alert("your eligible");
+        } else {
+            alert("your not eligible");
+        }
+
+
 
     }
 
