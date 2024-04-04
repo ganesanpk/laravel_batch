@@ -51,8 +51,6 @@
         </form>
     </div>
 </body>
-
-
 <script>
     function validation() {
         var fname = document.getElementById('fname').value;
@@ -63,6 +61,7 @@
         var qual = document.getElementById('qualify').value;
         var mobile = document.getElementById('mobile').value;
         var doj = document.getElementById('doj').value;
+        mobile = parent(mobile);
         var flength = fname.length;
         var mobilepattern = mobile.length;
         if (fname != "") {
@@ -185,7 +184,9 @@
             alert("you are not eligible");
         }
 
-    }    
+    }   
+      
+       
 </script>
 
 </html>
