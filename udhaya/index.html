@@ -135,14 +135,14 @@
         else {
             alert("last name is mandatory");
         }
-        if (age != "") {
-            if (age < 18 || age > 50) {
-                alert("age should be greater than 18 and less than 50 characters");
-            }
-        }
-        else {
-            alert("age name is mandatory");
-        }
+        // if (age != "") {
+        //     if (age < 18 || age > 50) {
+        //         alert("age should be greater than 18 and less than 50 characters");
+        //     }
+        // }
+        // else {
+        //     alert("age is mandatory");
+        // }
         if (dob !="") {
             alert("dob is submitted")}
             else
@@ -150,43 +150,41 @@
                 alert("dob is mandatory");
             }
 
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email.match(emailPattern)) {
+        // var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // if (email.match(emailPattern)) {
 
-        }
-        else {
-            alert("email is mandatory");
-        }
-        if (qual !="") {
-            alert("qualification is registered");
-        }
-        else{
-            alert("qualification is mandatory");
-        }
+        // }
+        // else {
+        //     alert("email is mandatory");
+        // }
+        // if (qual !="") {
+        //     alert("qualification is registered");
+        // }
+        // else{
+        //     alert("qualification is mandatory");
+        // }
 
-    //     var mobilePattern = /^[89]\d{9}$/;  
-    //    console.log(mobile.test(mobilePattern));
-    //    console.error();
-    //     if (mobile.test(mobilePattern)){
-    //         alert("Mobile number registered");
-    //     }else{
-    //         alert("Please Enter valid numbers");
-    //     }
+        var mobilePattern = /^[89]\d{9}$/;  
+       console.log(mobile.test(mobilePattern));
+       console.error();
+        if (mobile.test(mobilePattern)){
+            alert("Mobile number registered");
+        }else{
+            alert("Please Enter valid numbers");
+        }
         var cdate =new Date();
         var dobd = new date(dob);
         var cyear = cdate.getFullYear();
         var dobyear = dobd.getFullYear();
         var age = cyear - dobyear;
+        alert(age);
         if(age >= 18){
             alert("your are eligible");
         }
         else{
             alert("you are not eligible");
         }
-
-    }   
-      
-       
+    }
 </script>
 
 </html>
