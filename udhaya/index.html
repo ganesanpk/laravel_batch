@@ -23,11 +23,11 @@
                 <br>
                 <br>
                 <lable for="">Age :</lable>
-                <input type="number" placeholder="enter your age" class="" id="number" name="number">
+                <input type="number" placeholder="enter your age" class="" id="age" name="number">
                 <br>
                 <br>
                 <lable for=""> date of Birth :</lable>
-                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob">
+                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob" onclick="age()">
                 <br>
                 <br>
                 <lable for="">E-mail id :</lable>
@@ -56,7 +56,7 @@
         var fname = document.getElementById('fname').value;
         var lname = document.getElementById('lname').value;
         var age = document.getElementById('number').value;
-        var dob = document.getElementById('dob').value;
+        
         var email = document.getElementById('email').value;
         var qual = document.getElementById('qualify').value;
         var mobile = document.getElementById('mobile').value;
@@ -117,24 +117,8 @@
             alert("mobile number is registered");
         } 
         alert(mobile);
-        var flength = fname.length;
-        if (fname != "") {
-            if (flength < 3 || flength > 11) {
-                alert("first name should be more than 3 and less than 11 characters");
-            }
-        }
-        else {
-            alert("first name is mandatory");
-        }
-
-        if (lname != "") {
-            if (flength < 3 || flength > 11) {
-                alert("last name should be more than 3 and less than 11 characters");
-            }
-        }
-        else {
-            alert("last name is mandatory");
-        }
+       
+        
         // if (age != "") {
         //     if (age < 18 || age > 50) {
         //         alert("age should be greater than 18 and less than 50 characters");
@@ -144,7 +128,7 @@
         //     alert("age is mandatory");
         // }
         if (dob !="") {
-            alert("dob is submitted")}
+            alert("dob is submitted");}
             else
             {
                 alert("dob is mandatory");
@@ -164,27 +148,41 @@
         //     alert("qualification is mandatory");
         // }
 
+   
         var mobilePattern = /^[89]\d{9}$/;  
        console.log(mobile.test(mobilePattern));
        console.error();
         if (mobile.test(mobilePattern)){
             alert("Mobile number registered");
         }else{
-            alert("Please Enter valid numbers");
+          alert("Please Enter valid numbers");
         }
+    }
+
+        function age(){
+        var dob = document.getElementById('dob').value;
+        var age = document.getElementById('age');
         var cdate =new Date();
-        var dobd = new date(dob);
+        var dobd = new date('dob');
         var cyear = cdate.getFullYear();
         var dobyear = dobd.getFullYear();
         var age = cyear - dobyear;
+        agc.value=age;
         alert(age);
-        if(age >= 18){
+        if(age !=""){
+            if(age >= 18){
             alert("your are eligible");
-        }
-        else{
+           }
+           else{
             alert("you are not eligible");
         }
-    }
+        else{
+            alert("enter your age");
+    
+            
+        }
+    }}
+    
 </script>
 
 </html>
