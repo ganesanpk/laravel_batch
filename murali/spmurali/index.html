@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-        <div class="bor">
+        <div class="bor bg1">
             <div class="container">
                 <div class="text-center h1">FORM VALIATION</div>
                 <form action="#" method="post">
@@ -47,8 +47,11 @@
                     <div>
                         <label for="">DATE OF BIRTH:</label>
                         <input type="date" placeholder="Enter your DOB" class="" id="dob" name="dob">
-                    </div>
-                    <br>
+                    </div><br>
+                    <div>
+                        <label for="">AGE:</label>
+                        <input type="number" placeholder="enter your age" class="" id="age" name="age"></input>
+                    </div><br>
                     <div>
                         <label for="">MOBILE NUMBER:</label>
                         <input type="number" placeholder="Enter your mobile number" class="" id="mob" name="mob">
@@ -70,23 +73,7 @@
                             name="cpass">
                     </div><br>
                     <div>
-                        <label for="">NATIONALITY:</label>
-                        <input type="text" placeholder="Enter your nationality" class="" id="nation" name="nation"
-                            name="nation">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="">STATE:</label>
-                        <input type="text" placeholder="Enter your state" class="" id="state" name="state" name="state">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="">ADDERS:</label>
-                        <input type="text" placeholder=" enter your address" class="" id="add" name="add">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="">JOINING DATE:</label>
+                        <label for="">APPLY DATE:</label>
                         <input type="date" placeholder="Enter your join date" class="" id="jdate" name="jdate">
                     </div><br>
                     <div class="col-12">
@@ -117,7 +104,6 @@
         } else {
             alert("last name is a madatrory");
         }
-        // gender
         var gendername = document.getElementsByName('gender');
         var gender = "";
         for (var i = 0; i < gendername.length; i++) {
@@ -145,6 +131,16 @@
             alert("dob is update");
         } else {
             alert("dob is madatrory");
+        }
+        var age = document.getElementById('age').value;
+        if (age != null) {
+            if (age < 18 || age > 58) { 
+                alert("Age Must be 18 to 58");
+            } else {
+                alert("Age is updated");
+            }
+        } else {
+            alert("Enter Your Age");
         }
         var mob = document.getElementById("mob").value;
         const mobno = /^[89][0-9]{9}/;
@@ -177,31 +173,17 @@
         } else {
             alert("Passwords did not match");
         }
-        var nation = document.getElementById('nation').value;
-        if (nation != "") {
-
-        } else {
-            alert("plese enter nation");
-        }
-        var state = document.getElementById('state').value;
-        if (state != "") {
-
-        } else {
-            alert("plese enter state");
-        }
-        var add = document.getElementById('add').value;
-        if (add != "") {
-
-        } else {
-            alert("plese enter address");
-        }
         var jdate = document.getElementById('jdate').value;
         cdate = new Date(jdate);
         var year = cdate.getFullYear();
-        if ((year - dobyear) >= 18) {
-            alert("your eligible");
+        if (jdate != "") {
+            if ((year - dobyear) >= 18) {
+                alert("your eligible");
+            } else {
+                alert("your not eligible");
+            }
         } else {
-            alert("your not eligible");
+            alert("plese enter your join date")
         }
 
     }
