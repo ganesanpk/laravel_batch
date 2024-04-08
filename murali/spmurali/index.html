@@ -120,7 +120,7 @@
             alert("last name is a madatrory");
         }
         // gender
-        var gendername = document.getElementsByName('gender');
+        var gendername = document.getElementsByName('gender').value;
         var gender = "";
         for (var i = 0; i < gendername.length; i++) {
             if (gendername[i].checked) {
@@ -144,8 +144,8 @@
         // date of birth
         var dob = document.getElementById('dob').value;
         if (dob != "") {
-            dobdate = new Date(dob);
-            dobyear = dobyear.getFullYear();
+            var dobdate = new Date(dob);
+            var dobyear = dobdate.getFullYear();
             alert("dob is update");
         } else {
             alert("dob is madatrory");
@@ -214,8 +214,5 @@
             alert("your not eligible");
         }
     }
-
-
 </script>
-
 </html>
