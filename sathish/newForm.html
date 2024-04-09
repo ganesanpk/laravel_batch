@@ -11,6 +11,11 @@
         crossorigin="anonymous"></script>
     <title>New Form</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .error-message{
+            color: red;
+        }
+    </style>
     
 </head>
 
@@ -92,3 +97,23 @@
 </body>
 
 </html>
+<script>
+    
+    document.getElementById('myForm').addEventListener("submit", function(event){
+        event.preventDefault();
+        var isValid =true;
+        var fname = document.getElementById('fname').value;
+        if(fname==""){
+            document.getElementById('error').innerHTML="Please enter Firstname";
+            isValid=false;
+        }else{
+            document.getElementById('error').innerHTML="";            
+        }
+
+        
+        
+        if(isValid){
+            event.target.submit();
+        }
+    });
+</script>
