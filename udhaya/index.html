@@ -4,185 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Index</title>
 </head>
+<style>
+    .error-message{
+        color:red;
+    }
+</style>
 
 <body>
     <div class="container">
-        <form method="post" action="#" autocomplete="on">
+        <form method="post" action="#" name="myform" id="myform" autocomplete="on">
             <fieldset>
                 <div class="container">
                     <div class="h1 text-center mt-5 ">BIO DATA</div>
                 </div>
                 <lable for="">First Name :</lable>
                 <input type="text" placeholder="First Name" class="" id="fname" name="fname">
+                <span class="error-message" id="error"></span>
                 <br>
                 <br>
                 <lable for="">Last Name :</lable>
                 <input type="text" placeholder="Last Name" class="" id="lname" name="lname">
+                <span class="error-message" id="error1"></span>
                 <br>
                 <br>
                 <lable for="">Age :</lable>
                 <input type="number" placeholder="enter your age" class="" id="age" name="number">
+                <span class="error-message" id="error2"></span>
                 <br>
                 <br>
                 <lable for=""> date of Birth :</lable>
-                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob" onclick="age()">
+                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob">
+                <span class="error-message" id="error3"></span>
                 <br>
                 <br>
                 <lable for="">E-mail id :</lable>
                 <input type="email" placeholder="enter your email-id" class="" id="email" name="email">
+                <span class="error-message" id="error4"></span>
                 <br>
                 <br>
                 <lable for="">Qualification :</lable>
                 <input type="text" placeholder="enter your qualification" class="" id="qualify" name="qualify">
+                <span class="error-message" id="error5"></span>
                 <br>
                 <br>
                 <lable fot="">Mobile number :</lable>
                 <input type="number" placeholder="enter your mobile number" class="" id="mobile" name="mobile">
+                <span class="error-message" id="error6"></span>
                 <br>
                 <br>
                 <lable for="">Date of Joining :</lable>
                 <input type="date" placeholder="enter your joining date" class="" id="doj" name="doj">
+                <span class="error-message" id="error7"></span>
                 <br>
                 <br>
-                <input type="submit" value="submit" id="submit" name="submit" onclick="validation()">
+                <input type="submit" value="submit" id="submit" name="submit">
             </fieldset>
         </form>
     </div>
 </body>
-<script>
-    function validation() {
-        var fname = document.getElementById('fname').value;
-        var lname = document.getElementById('lname').value;
-        var age = document.getElementById('number').value;
-        
-        var email = document.getElementById('email').value;
-        var qual = document.getElementById('qualify').value;
-        var mobile = document.getElementById('mobile').value;
-        var doj = document.getElementById('doj').value;
-        mobile = parent(mobile);
-        var flength = fname.length;
-        var mobilepattern = mobile.length;
-        if (fname != "") {
-            if (flength < 3 || flength > 11) {
-                alert("first name should be more than 3 and less than 11 characters");
-            }
-        }
-        else {
-            alert("first name is mandatory");
-        }
-
-        if (lname != "") {
-            if (flength < 3 || flength > 11) {
-                alert("last name should be more than 3 and less than 11 characters");
-            }
-        }
-        else {
-            alert("last name is mandatory");
-        }
-        if (age != "") {
-            if (age < 18 || age > 50) {
-                alert("age should be greater than 18 and less than 50 characters");
-            }
-        }
-        else {
-            alert("age name is mandatory");
-        }
-        if (dob !="") {
-            alert("dob is submitted")}
-            else
-            {
-                alert("dob is mandatory");
-            }
-
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email.match(emailPattern)) {
-
-        }
-        else {
-            alert("email is mandatory");
-        }
-        if (qual !="") {
-            alert("qualification is registered");
-        }
-        else{
-            alert("qualification is mandatory");
-        }
-        var mobilePattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-        if (!mobilePattern.test(mobileNumber)) {
-        alert("please enter a valid phone number");
-        }
-        else{
-            alert("mobile number is registered");
-        } 
-        alert(mobile);
-       
-        
-        // if (age != "") {
-        //     if (age < 18 || age > 50) {
-        //         alert("age should be greater than 18 and less than 50 characters");
-        //     }
-        // }
-        // else {
-        //     alert("age is mandatory");
-        // }
-        if (dob !="") {
-            alert("dob is submitted");}
-            else
-            {
-                alert("dob is mandatory");
-            }
-
-        // var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        // if (email.match(emailPattern)) {
-
-        // }
-        // else {
-        //     alert("email is mandatory");
-        // }
-        // if (qual !="") {
-        //     alert("qualification is registered");
-        // }
-        // else{
-        //     alert("qualification is mandatory");
-        // }
-
-   
-        var mobilePattern = /^[89]\d{9}$/;  
-       console.log(mobile.test(mobilePattern));
-       console.error();
-        if (mobile.test(mobilePattern)){
-            alert("Mobile number registered");
-        }else{
-          alert("Please Enter valid numbers");
-        }
-    }
-
-        function age(){
-        var dob = document.getElementById('dob').value;
-        var age = document.getElementById('age');
-        var cdate =new Date();
-        var dobd = new date('dob');
-        var cyear = cdate.getFullYear();
-        var dobyear = dobd.getFullYear();
-        var age = cyear - dobyear;
-        agc.value=age;
-        alert(age);
-        if(age !=""){
-            if(age >= 18){
-            alert("your are eligible");
-           }
-           else{
-            alert("you are not eligible");
-        }
-        else{
-            alert("enter your age");
-    
-            
-        }
-    }}
-    
-</script>
-
 </html>
+<script>
+    document.getElementById('myform').addEventListener("submit", function(event){
+        event.preventDefault();
+        var isValid = true;
+        var fname = document.getElementById('fname').value;
+       
+        if(fname==""){
+            document.getElementById('error').innerHTML="please enter Firstname";
+            isValid=false;
+        }else{
+            document.getElementById('error').innerHTML="";
+        }
+        var lname = document.getElementById('lname').value;
+        if(lname==""){
+            document.getElementById('error1').innerHTML="please enter Last name";
+            isValid=false;
+        }else{
+            document.getElementById('error1').innerHTML="";
+        }
+        var age = document.getElementById('age').value;
+        if(age==""){
+            document.getElementById('error2').innerHTML="please enter your age";
+            isValid=false;
+        }else{
+            document.getElementById('error2').innerHTML="";
+        }
+        var dob = document.getElementById('dob').value;
+        if(dob==""){
+            document.getElementById('error3').innerHTML="please enter your date of birth";
+            isValid=false;
+        }else{
+            document.getElementById('error3').innerHTML="";
+        }
+        var email = document.getElementById('email').value;
+        if(email==""){
+            document.getElementById('error4').innerHTML="please enter your email-id";
+            isValid=false;
+        }else{
+            document.getElementById('error4').innerHTML="";
+        }
+        var qualify = document.getElementById('qualify').value;
+        if(qualify==""){
+            document.getElementById('error5').innerHTML="please enter your qualification";
+            isValid=false;
+        }else{
+            document.getElementById('error5').innerHTML="";
+        }
+        var qualify = document.getElementById('mobile').value;
+        if(mobile==""){
+            document.getElementById('error6').innerHTML="please enter your mobile number";
+            isValid=false;
+        }else{
+            document.getElementById('error6').innerHTML="";
+        }
+        var doj = document.getElementById('doj').value;
+        if(doj==""){
+            document.getElementById('error7').innerHTML="please enter your Date of Joining";
+            isValid=false;
+        }else{
+            document.getElementById('error7').innerHTML="";
+        }
+        if(isValid){
+            event.target.submit();
+        }
+    });
+</script>
