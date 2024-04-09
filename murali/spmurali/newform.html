@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boots.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/db2795a210.js" crossorigin="anonymous"></script>
+    <title>NEW FORM</title>
+   <style>
+    .error-meassage{
+        color: red;
+    }
+   </style>
+</head>
+<body>
+    <div class="container p-4">
+        <div class="container border rounded bg">
+            <div class="p-2 mb-3 fs-3 text-center fw-bold">FORM VALIDATION</div>
+            <div class="">
+                <form action="#" name="myForm" method="post" id="myform">
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">FIRST NAME:</label>
+                        <input type="text" class="form-control py-3" id="fname" name="fname" placeholder="Enter First Name">
+                        <span class="error-meassage" id="f-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold ">LAST NAME:</label>
+                        <input type="text" class="form-control py-3" id="lname" name="lname" placeholder="Enter Last Name">
+                        <span class="error-meassage" id="l-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">AGE:</label>
+                        <input type="number" class="form-control py-3" id="age" name="age" placeholder="Enter Age">
+                        <span class="error-meassage" id="a-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold ">GENDER: </label>
+    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="gender" value="Male">Male
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="gender" value="Female">Female
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="gender" value="Others">Others
+                        </div>
+                        <span class="error-meassage" id="g-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">DATE OF BIRTH:</label>
+                        <input type="date" class="form-control py-3" id="dob" name="dob">
+                        <span class="error-meassage" id="d-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">MOBILE NUMBER:</label>
+                        <input type="number" class="form-control py-3" id="mob" name="mob" placeholder="Enter Mobile Number">
+                        <span class="error-meassage" id="m-e"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">EMAIL ADDRESS:</label>
+                        <input type="email" class="form-control py-3" id="email" name="email" placeholder="Enter Email">
+                        <span class="error-meassage" id="e-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">PASSWORD:</label>
+                        <input type="password" class="form-control py-3" id="pass" name="pass" placeholder="Enter password">
+                        <span class="error-meassage" id="p-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">CONFORM PASSWORD:</label>
+                        <input type="password" class="form-control py-3" id="cpass" name="conpass"
+                            placeholder="Enter password">
+                        <span class="error-meassage" id="c-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">QUALIFICATION:</label>
+                        <input type="text" class="form-control py-3" id="qual" name="qual" placeholder="Enter Qualification">
+                        <span class="error-meassage" id="q-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">APPLY DATE</label>
+                        <input type="date" class="form-control py-3" id="adate" name="adate" placeholder="Enter Join Date">
+                        <span class="error-meassage" id="ap-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3 text-center ">
+                        <button type="submit" class="btn btn-danger fw-bold py-2 my-3" id="submit" name="submit-btn"
+                        value="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('myform').addEventListener("submit", function(event){
+        event.preventDefault();
+        var isValid=true;
+        // first name
+        var fname = document.getElementById('fname').value;
+        var flength = fname.length;
+        if (fname != "") {
+            if (flength < 3 || flength > 16) {
+                alert("first name should be more than 3 and less than 11 character");
+            }
+        } else {
+            alert("first name is a madatrory")
+        }
+        if(fname ==""){
+            document.getElementById('f-e').innerHTML="please enter first name";
+            isValid=false;
+        }else{
+            document.getElementById('f-e').innerHTML="";
+        }
+        // last name
+        var lname=document.getElementById('lname').value;
+        var llength = lname.length;
+        if (lname != "") {
+            if (llength < 1 || llength > 5) {
+                alert("last name should be more than 1 and less than 5 character");
+            }
+        } else {
+            alert("last name is a madatrory");
+        }
+        if(lname==""){
+            document.getElementById('l-e').innerHTML="please enter last name";
+            isValid = false;
+        }else{
+            document.getElementById('l-e').innerHTML=""
+        }
+        // age
+        var age= document.getElementById('age').value;
+        if (age != null) {
+            if (age < 18 || age > 58) { 
+                alert("Age Must be 18 to 58");
+            } else {
+                alert("Age is updated");
+            }
+        } else {
+            alert("Enter Your Age");
+        }
+        if (age==""){
+            document.getElementById('a-e').innerHTML="please enter age";
+            isValid=false;
+        }else{
+            document.getElementById('a-e').innerHTML="";
+        }
+        // gender
+        var gender= document.getElementById('gender').value;
+        // var gender = "";
+        // for (var i = 0; i < gendername.length; i++) {
+        //     if (gendername[i].checked) {
+        //         gender = gendername[i].value;
+        //         break;
+        //     }
+        // }
+        // if (gender == "") {
+        //     alert("please select gender");
+        // } else {
+        //     alert("selected gender : " + gender);
+        // }
+        if (gender==""){
+            document.getElementById('g-e').innerHTML="please select any one";
+            isValid=false;
+        }else{
+            document.getElementById('g-e').innerHTML="";
+        }
+        // dob
+        var dob= document.getElementById('dob').value;
+        if (dob != "") {
+            dobdate = new Date(dob);
+            dobyear = dobdate.getFullYear();
+            alert("dob is update");
+        } else {
+            alert("dob is madatrory");
+        }
+        if (dob==""){
+            document.getElementById('d-e').innerHTML="please enter date of birth";
+            isValid=false;
+        }else{
+            document.getElementById('d-e').innerHTML="";
+        }
+        // mob
+        var mob= document.getElementById('mob').value;
+        const mobno = /^[89][0-9]{9}/;
+        if (!mobno.test(mob)) {
+            alert("enter your 10 digit mob no with format");
+        } else {
+            alert("mobile number is update");
+        }
+        if (mob==""){
+            document.getElementById('m-e').innerHTML="please enter mobile number";
+            isValid=false;
+        }else{
+            document.getElementById('m-e').innerHTML="";
+        }
+        // email
+        var email= document.getElementById('email').value;
+        var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
+        if (!mailformat.test(email)) {
+            alert("enter mail id with formate");
+        } else {
+            alert("email id is update");
+        }
+        if (email==""){
+            document.getElementById('e-e').innerHTML="please enter email id";
+            isValid=false;
+        }else{
+            document.getElementById('e-e').innerHTML="";
+        }
+        // password
+        var pass= document.getElementById('pass').value;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+        if (!passreg.test(pass)) {
+            alert("please enter valid password")
+        } else {
+            alert("password updated")
+        }
+        if (pass==""){
+            document.getElementById('p-e').innerHTML="please enter password";
+            isValid=false;
+        }else{
+            document.getElementById('p-e').innerHTML="";
+        }
+        // conform password
+        var cpass= document.getElementById('cpass').value;
+        if (pass = cpass) {
+            alert("Password created successfully");
+        } else {
+            alert("Passwords did not match");
+        }
+        if (cpass==""){
+            document.getElementById('c-e').innerHTML="please enter conform password";
+            isValid=false;
+        }else{
+            document.getElementById('c-e').innerHTML="";
+        }
+        // qualification
+        var qual = document.getElementById('qual').value;
+        if (qual==""){
+            document.getElementById('q-e').innerHTML="please enter your qualification";
+            isValid=false;
+        }else{
+            document.getElementById('q-e').innerHTML="";
+        }
+        // apply date
+        var adate= document.getElementById('adate').value;
+        if (adate==""){
+            document.getElementById('ap-e').innerHTML="please enter apply date";
+            isValid=false;
+        }else{
+            document.getElementById('ap-e').innerHTML="";
+        }
+        if (isValid){
+            event.target.submit();
+        }
+    });
+</script>
