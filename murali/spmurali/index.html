@@ -87,6 +87,7 @@
 <script>
     function valiation() {
         var fname = document.getElementById('fname').value;
+        
         var flength = fname.length;
         if (fname != "") {
             if (flength < 3 || flength > 16) {
@@ -174,7 +175,7 @@
             alert("Passwords did not match");
         }
         var jdate = document.getElementById('jdate').value;
-        cdate = new Date(jdate);
+        var cdate = new Date(jdate);
         var year = cdate.getFullYear();
         if (jdate != "") {
             if ((year - dobyear) >= 18) {
