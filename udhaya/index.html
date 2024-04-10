@@ -36,7 +36,7 @@
                 <br>
                 <br>
                 <lable for=""> date of Birth :</lable>
-                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob">
+                <input type="date" placeholder="enter your dob" class="" id="dob" name="dob" onchange="callage()">
                 <span class="error-message" id="error3"></span>
                 <br>
                 <br>
@@ -66,7 +66,7 @@
     </div>
 </body>
 </html>
-<script>
+<script>    
     document.getElementById('myform').addEventListener("submit", function(event){
         event.preventDefault();
         var isValid = true;
@@ -131,4 +131,12 @@
             event.target.submit();
         }
     });
+    function callage(){
+        var dob=document.getElementById('dob').value;
+        var ages = document.getElementById('age');
+       var cdob=new Date(dob);
+       var cdate =new Date();
+       var age =cdate.getFullYear() - cdob.getFullYear();
+       ages.value=age;        
+    }
 </script>
