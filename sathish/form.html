@@ -15,12 +15,13 @@
 <body>
     <div class="container p-4">
         <div class="p-2 mb-3 fs-2">Bio Data</div>
-        <form action="#" name="myForm" onsubmit="validation()" method="post">
+        <form action="#" name="myForm" onsubmit ="validation()" method="post">
             <div class=" col-md-6 mb-3">
                 <label for="" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
+                <span id="ff">fdfd</span>
             </div>
-            <div id="firstname"></div>
+            
             <div class=" col-md-6 mb-3">
                 <label for="" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
@@ -71,7 +72,7 @@
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary" id="submit" name="submit-btn"
-                    value="submit">Submit</button>
+                    value="submit" >Submit</button>
             </div>
 
         </form>
@@ -79,21 +80,26 @@
 </body>
 <script>
     function validation() {
-        var firstname = document.getElementById("firstname").value;
-        alert(firstname);
-        var firsterror ="First  Name  Should Be morethen 3 and lessthan 11 charactor";
-        // first name
-        var fname = document.getElementById('fname').value;
-        var flength = fname.length;
-        if (fname != "") {
-            if (flength < 3 || flength > 16) {
-                firstname.value =firsterror;
-            } else {
-                firstname.value="first name submitted";
-            }
-        } else {
-            firstname.value="First name is mandatory Field";
+       var fname = document.getElementById('fname').value;
+       var first = document.getElementById('ff');
+        if(fname==""){
+            alert(first.innerHTML="please enter");
         }
+               // var firstname = document.getElementById("firstname").value;
+        // alert(firstname);
+        // var firsterror ="First  Name  Should Be morethen 3 and lessthan 11 charactor";
+        // // first name
+        // var fname = document.getElementById('fname').value;
+        // var flength = fname.length;
+        // if (fname != "") {
+        //     if (flength < 3 || flength > 16) {
+        //         firstname.value =firsterror;
+        //     } else {
+        //         firstname.value="first name submitted";
+        //     }
+        // } else {
+        //     firstname.value="First name is mandatory Field";
+        // }
 
         // // last name
         // var lname = document.getElementById('lname').value;
@@ -229,8 +235,6 @@
         // } else {
         //     alert("your not eligible");
         // }
-
-
 
     }
 

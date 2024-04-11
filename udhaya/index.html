@@ -8,8 +8,8 @@
     <title>Index</title>
 </head>
 <style>
-    .error-message{
-        color:red;
+    .error-message {
+        color: red;
     }
 </style>
 
@@ -31,7 +31,7 @@
                 <br>
                 <br>
                 <lable for="">Age :</lable>
-                <input type="number" placeholder="enter your age" class="" id="age" name="number">
+                <input type="number" placeholder="enter your age" class="" id="age" name="number" onchange="agecal()">
                 <span class="error-message" id="error2"></span>
                 <br>
                 <br>
@@ -65,70 +65,93 @@
         </form>
     </div>
 </body>
+
 </html>
 <script>
-    document.getElementById('myform').addEventListener("submit", function(event){
+    document.getElementById('myform').addEventListener("submit", function (event) {
         event.preventDefault();
         var isValid = true;
         var fname = document.getElementById('fname').value;
-       
-        if(fname==""){
-            document.getElementById('error').innerHTML="please enter Firstname";
-            isValid=false;
-        }else{
-            document.getElementById('error').innerHTML="";
+        var flength = fname.length;
+        if (flength != 0) {
+            if (flength < 3 || flength > 11) {
+                document.getElementById('error').innerHTML = "first name should be 3 to 11 characters";
+                isVallid = false;
+            }
         }
+        else {
+            document.getElementById('error').innerHTML = "first name is mandatory";
+            isValid = false;
+        }
+
         var lname = document.getElementById('lname').value;
-        if(lname==""){
-            document.getElementById('error1').innerHTML="please enter Last name";
-            isValid=false;
-        }else{
-            document.getElementById('error1').innerHTML="";
+        var llength = lname.length;
+        if (llength != 0) {
+            if (llength < 3 || llength > 11) {
+                document.getElementById('error1').innerHTML = "last name should be 3 to 11 characters";
+                isVallid = false;
+            }
         }
-        var age = document.getElementById('age').value;
-        if(age==""){
-            document.getElementById('error2').innerHTML="please enter your age";
-            isValid=false;
-        }else{
-            document.getElementById('error2').innerHTML="";
+        else {
+            document.getElementById('error1').innerHTML = "last name is mandatory";
+            isValid = false;
         }
-        var dob = document.getElementById('dob').value;
-        if(dob==""){
-            document.getElementById('error3').innerHTML="please enter your date of birth";
-            isValid=false;
-        }else{
-            document.getElementById('error3').innerHTML="";
-        }
-        var email = document.getElementById('email').value;
-        if(email==""){
-            document.getElementById('error4').innerHTML="please enter your email-id";
-            isValid=false;
-        }else{
-            document.getElementById('error4').innerHTML="";
-        }
-        var qualify = document.getElementById('qualify').value;
-        if(qualify==""){
-            document.getElementById('error5').innerHTML="please enter your qualification";
-            isValid=false;
-        }else{
-            document.getElementById('error5').innerHTML="";
-        }
-        var qualify = document.getElementById('mobile').value;
-        if(mobile==""){
-            document.getElementById('error6').innerHTML="please enter your mobile number";
-            isValid=false;
-        }else{
-            document.getElementById('error6').innerHTML="";
-        }
-        var doj = document.getElementById('doj').value;
-        if(doj==""){
-            document.getElementById('error7').innerHTML="please enter your Date of Joining";
-            isValid=false;
-        }else{
-            document.getElementById('error7').innerHTML="";
-        }
-        if(isValid){
-            event.target.submit();
-        }
-    });
+
+        function agecal() {
+            var dob = document.getElementById('dob').value;
+            var age = document.getElementById('age');
+            var cdate = new Date();
+            var dobd = new date('dob');
+            var cyear = cdate.getFullYear();
+            var dobyear = dobd.getFullYear();
+            var age = cyear - dobyear;
+            agc.value = age;
+            if (age != "") {
+                if (age < 17) {
+                    document.getElementById('error2').innerHTML = "you are not eligible";
+                    isValid = false; 
+                }}
+            else {
+                document.getElementById('error2').innerHTML = "Age is mandatory";
+                isValid = false;}}
+                    var dob = document.getElementById('dob').value;
+                    if (dob == "") {
+                        document.getElementById('error3').innerHTML = "please enter your date of birth";
+                        isValid = false;
+                    } else {
+                        document.getElementById('error3').innerHTML = "";
+                    }
+                    var email = document.getElementById('email').value;
+                     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                     if (email!=""){
+                        if (!email.match(emailPattern)){
+                        document.getElementById('error4').innerHTML = "Enter your Valid Email ID";}}
+                    else{
+                        document.getElementById('error4').innerHTML = "Email ID is mandatory";}
+                     
+                        var qualify = document.getElementById('qualify').value;
+                    if (qualify == "") {
+                        document.getElementById('error5').innerHTML = "please enter your qualification";
+                        isValid = false;
+                    } else {
+                        document.getElementById('error5').innerHTML = "";
+                    }
+                    var qualify = document.getElementById('mobile').value;
+                    if (mobile == "") {
+                        document.getElementById('error6').innerHTML = "please enter your mobile number";
+                        isValid = false;
+                    } else {
+                        document.getElementById('error6').innerHTML = "";
+                    }
+                    var doj = document.getElementById('doj').value;
+                    if (doj == "") {
+                        document.getElementById('error7').innerHTML = "please enter your Date of Joining";
+                        isValid = false;
+                    } else {
+                        document.getElementById('error7').innerHTML = "";
+                    }
+                    if (isValid) {
+                        event.target.submit();
+                    }
+                });
 </script>

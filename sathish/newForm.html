@@ -30,7 +30,7 @@
                         <label for="" class="form-label fw-bold">First Name</label>
                         <input type="text" class="form-control py-3" id="fname" name="fname"
                             placeholder="Enter First Name">
-                        <span class="error-message" id="error-f"></span>
+                        <span class="error-message" id="error"></span>
                     </div>
 
                     <!-- <div class=" col-md-6 mb-3">
@@ -115,21 +115,63 @@
         var isValid = true;
         // first name
         var fname = document.getElementById('fname').value;
-        var flength = fname.length;
-        if (flength != "") {
+        if (fname == "") {
+            document.getElementById('error').innerHTML = "please enter first name";
+            isValid = false;
+        } else {
+            document.getElementById('error').innerHTML = "";
+        }
 
-            if (flength < 3 || flength > 16) {
-                document.getElementById('error-f').innerHTML = "first name should be greaterthen 3 and less then 16";
+        // last name
+        var lname = document.getElementById('lname').value;
+        if (lname == "") {
+            document.getElementById('error-lastname').innerHTML = "please enter last name";
+            isValid = false;
+        } else {
+            document.getElementById('error-lastname').innerHTML = "";
+        }
+        // age
+        var age = document.getElementById('age').value;
+        var dobyear;
+        var year;
+        if (age != null) {
+            if (age < 18 || age > 58) {
+                document.getElementById('error-age').innerHTML = "please enter your age ";
                 isValid = false;
-                console.log(2);
             }
         } else {
-            console.log(2332);
-            document.getElementById('error-f').innerHTML = "";
+            document.getElementById('error-age').innerHTML = "";
         }
+
+        // gender
+        var gender = document.getElementById('gender').value;
+        var gendername = document.getElementsByName('gender');
+        if (gender = "") {
+            for (var i = 0; i < gendername.length; i++) {
+                if (gendername[i].checked) {
+                    gender = gendername[i].value;
+                    break;
+                }
+            }
+            if (gender == "") {
+                document.getElementById('error-gender').innerHTML = "please select your gender";
+                isValid = false;
+            }
+
+        } else {
+            document.getElementById('error-gender').innerHTML = "";
+        }
+
+        // date of birth
+        
+
+
+
+
 
         if (isValid) {
             event.target.submit();
         }
+
     });
 </script>
