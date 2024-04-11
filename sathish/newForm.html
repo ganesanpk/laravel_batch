@@ -33,7 +33,7 @@
                         <span class="error-message" id="error"></span>
                     </div>
 
-                    <!-- <div class=" col-md-6 mb-3">
+                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold ">Last Name</label>
                         <input type="text" class="form-control py-3" id="lname" name="lname"
                             placeholder="Enter Last Name">
@@ -91,10 +91,12 @@
                         <label for="" class="form-label fw-bold">Date Of Joining</label>
                         <input type="date" class="form-control py-3" id="jdate" name="jdate"
                             placeholder="Enter Join Date">
-                    </div> -->
+                    </div>
                     <div class=" col-md-6 mb-3 text-center ">
-                        <button type="submit" class="btn btn-success fw-bold py-2 my-3" id="submit" name="submit-btn"
-                            value="submit">Submit</button>
+                        <!-- <button type="submit" class="btn btn-success fw-bold py-2 my-3" id="submit" name="submit-btn"
+                            value="submit">Submit</button> -->
+
+                            <button type="submit" class="btn btn-success fw-bold py-2 my-3" name="submitBtn" id="submitBtn" value="submit">Submit</button>
                     </div>
 
                 </form>
@@ -110,26 +112,34 @@
 <script>
 
 
-    document.getElementById('myForm').addEventListener("submit", function (event) {
+    document.getElementById('myForm').addEventListener("submitBtn", function (event) {
         event.preventDefault();
         var isValid = true;
         // first name
         var fname = document.getElementById('fname').value;
-        if (fname == "") {
-            document.getElementById('error').innerHTML = "please enter first name";
-            isValid = false;
+        var flength = fname.flength; 
+        if (fname != "") {
+            if (flength < 3 || flength > 16) {
+                document.getElementById('error').innerHTML = "first name should be morethen 3 and less then 13 charactors";
+                isValid = false;
+            }
+
         } else {
             document.getElementById('error').innerHTML = "";
         }
 
         // // last name
-        // var lname = document.getElementById('lname').value;
-        // if (lname == "") {
-        //     document.getElementById('error-lastname').innerHTML = "please enter last name";
-        //     isValid = false;
-        // } else {
-        //     document.getElementById('error-lastname').innerHTML = "";
-        // }
+        var lname = document.getElementById('lname').value;
+        var flength = lname.flength;
+        if (lname != "") {
+            if(flength < 2 || flength > 12){
+                document.getElementById('error-lastname').innerHTML = "please enter last name";
+            isValid = false;
+            }
+            
+        } else {
+            document.getElementById('error-lastname').innerHTML = "";
+        }
         // // age
         // var age = document.getElementById('age').value;
         // var dobyear;
@@ -162,8 +172,8 @@
         //     document.getElementById('error-gender').innerHTML = "";
         // }
 
-        
-        
+
+
 
 
 
