@@ -158,8 +158,8 @@
         
         //mobile number
         var qualify = document.getElementById('mobile').value;
-        var mobile = /^\d{10}$/;
-        if(inputtxt.value.match(mobile)) {
+        var pattern = /^[0-9]{10}$/;
+        if (pattern.test(mobileNumber)) {
             document.getElementById('error6').innerHTML = "";
         }
         else{
