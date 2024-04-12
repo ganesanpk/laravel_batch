@@ -31,6 +31,11 @@
                         <span class="error-meassage" id="l-e"></span>
                     </div>
                     <div class=" col-md-6 mb-3">
+                        <label for="" class="form-label fw-bold">DATE OF BIRTH:</label>
+                        <input type="date" class="form-control py-3" id="dob" name="dob" onchange="callage()">
+                        <span class="error-meassage" id="d-e"></span>
+                    </div>
+                    <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">AGE:</label>
                         <input type="number" class="form-control py-3" id="age" name="age" placeholder="Enter Age">
                         <span class="error-meassage" id="a-e"></span>
@@ -49,11 +54,7 @@
                         </div>
                         <span class="error-meassage" id="g-e"></span>
                     </div>
-                    <div class=" col-md-6 mb-3">
-                        <label for="" class="form-label fw-bold">DATE OF BIRTH:</label>
-                        <input type="date" class="form-control py-3" id="dob" name="dob">
-                        <span class="error-meassage" id="d-e"></span>
-                    </div>
+                   
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">MOBILE NUMBER:</label>
                         <input type="number" class="form-control py-3" id="mob" name="mob" placeholder="Enter Mobile Number">
@@ -96,97 +97,70 @@
 </body>
 </html>
 <script>
+    function callage(){
+        var dob=document.getElementById('dob').value;
+        var ages=document.getElementById('age');
+        var cdob=new Date(dob);
+        var cdate=new Date();
+        var age=cdate.getFullYear()-cdob.getFullYear();
+        ages.value=age;
+    }
     document.getElementById('myform').addEventListener("submit", function(event){
         event.preventDefault();
         var isValid=true;
         // first name
         var fname = document.getElementById('fname').value;
         var flength = fname.length;
-        if(flength >0){
+        if(fname !=""){
             if(flength < 3 || flength > 16){
-                document.getElementById('f-e').innerHTML="First name should be greater than 3 and less than 16";
+                document.getElementById('f-e').innerHTML="first name is less 3 and greater 16 character";
                 isValid=false;
             }
+        }else{
+            document.getElementById('f-e').innerHTML="please enter first name";
         }
         
         // last name
-        // var lname=document.getElementById('lname').value;
-        // var llength = lname.length;
-        // if (lname != "") {
-        //     if (llength < 1 || llength > 5) {
-        //         alert("last name should be more than 1 and less than 5 character");
-        //     }
-        // } else {
-        //     alert("last name is a madatrory");
-        // }
-        if(lname==""){
-            document.getElementById('l-e').innerHTML="please enter last name";
+        var lname=document.getElementById('lname').value;
+        var llength = lname.length;
+        if(lname !=""){
+            if (llength < 1 || llength > 5)
+            document.getElementById('l-e').innerHTML="last name is below 4 character";
             isValid = false;
         }else{
-            document.getElementById('l-e').innerHTML=""
+            document.getElementById('l-e').innerHTML="please enter last name"
+        }
+         // dob
+         var dob= document.getElementById('dob').value;
+        if (dob==""){
+            document.getElementById('d-e').innerHTML="plese enter dob";
+            isValid=false;
+        }else{
+            document.getElementById('d-e').innerHTML="";
         }
         // age
         var age= document.getElementById('age').value;
-        // if (age != null) {
-        //     if (age < 18 || age > 58) { 
-        //         alert("Age Must be 18 to 58");
-        //     } else {
-        //         alert("Age is updated");
-        //     }
-        // } else {
-        //     alert("Enter Your Age");
-        // }
-        if (age==""){
-            document.getElementById('a-e').innerHTML="please enter age";
+        if (age !=""){
+            if (age < 18 || age > 58){
+                document.getElementById('a-e').innerHTML="age must be 18 to 58";
             isValid=false;
+            }
         }else{
             document.getElementById('a-e').innerHTML="";
         }
         // gender
         var gender= document.getElementById('gender').value;
-        // var gender = "";
-        // for (var i = 0; i < gendername.length; i++) {
-        //     if (gendername[i].checked) {
-        //         gender = gendername[i].value;
-        //         break;
-        //     }
-        // }
-        // if (gender == "") {
-        //     alert("please select gender");
-        // } else {
-        //     alert("selected gender : " + gender);
-        // }
-        if (gender==""){
-            document.getElementById('g-e').innerHTML="please select any one";
+        if (gender == ""){
+            document.getElementById('g-e').innerHTML="please select any one gender";
             isValid=false;
         }else{
             document.getElementById('g-e').innerHTML="";
         }
-        // dob
-        var dob= document.getElementById('dob').value;
-        if (dob != "") {
-            dobdate = new Date(dob);
-            dobyear = dobdate.getFullYear();
-            alert("dob is update");
-        } else {
-            alert("dob is madatrory");
-        }
-        if (dob==""){
-            document.getElementById('d-e').innerHTML="please enter date of birth";
-            isValid=false;
-        }else{
-            document.getElementById('d-e').innerHTML="";
-        }
         // mob
         var mob= document.getElementById('mob').value;
-        const mobno = /^[89][0-9]{9}/;
+        const mobno = /^[0-9]{10}/;
         if (!mobno.test(mob)) {
-            alert("enter your 10 digit mob no with format");
-        } else {
-            alert("mobile number is update");
-        }
-        if (mob==""){
-            document.getElementById('m-e').innerHTML="please enter mobile number";
+            document.getElementById('m-e').innerHTML="enter your 10 digit mob no with format";
             isValid=false;
         }else{
             document.getElementById('m-e').innerHTML="";
@@ -195,12 +169,7 @@
         var email= document.getElementById('email').value;
         var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
         if (!mailformat.test(email)) {
-            alert("enter mail id with formate");
-        } else {
-            alert("email id is update");
-        }
-        if (email==""){
-            document.getElementById('e-e').innerHTML="please enter email id";
+            document.getElementById('e-e').innerHTML="enter mail id with formate";
             isValid=false;
         }else{
             document.getElementById('e-e').innerHTML="";
@@ -209,41 +178,47 @@
         var pass= document.getElementById('pass').value;
         const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
         if (!passreg.test(pass)) {
-            alert("please enter valid password")
-        } else {
-            alert("password updated")
-        }
-        if (pass==""){
-            document.getElementById('p-e').innerHTML="please enter password";
+            document.getElementById('p-e').innerHTML="please enter valid password";
             isValid=false;
         }else{
-            document.getElementById('p-e').innerHTML="";
+            document.getElementById('p-e').innerHTML="enter pass word";
         }
         // conform password
         var cpass= document.getElementById('cpass').value;
-        if (pass = cpass) {
-            alert("Password created successfully");
-        } else {
-            alert("Passwords did not match");
-        }
-        if (cpass==""){
-            document.getElementById('c-e').innerHTML="please enter conform password";
-            isValid=false;
+        if(cpass!=""){
+            if (pass == cpass) {
+                document.getElementById('c-e').innerHTML="";
         }else{
-            document.getElementById('c-e').innerHTML="";
+            
+            document.getElementById('c-e').innerHTML="password and confirm password should be same";
+            isValid=false;
+        }
+        }else{
+            document.getElementById('c-e').innerHTML="Please Enter confirm password";
+            isValid=false;
         }
         // qualification
         var qual = document.getElementById('qual').value;
-        if (qual==""){
-            document.getElementById('q-e').innerHTML="please enter your qualification";
-            isValid=false;
+        if (qual != "") {
+            if (lqual < 2 || lqual > 5) {
+                document.getElementById('q-e').innerHTML=("qualification length must be less 2 or high 5");
+                isValid=false;
+            }
         }else{
-            document.getElementById('q-e').innerHTML="";
+            document.getElementById('q-e').innerHTML="Please Enter Qualification";
+            isValid=false;
         }
+        
         // apply date
         var adate= document.getElementById('adate').value;
-        if (adate==""){
-            document.getElementById('ap-e').innerHTML="please enter apply date";
+        cdate = new Date(adate);
+        var year = cdate.getFullYear();
+        if (adate != "") {
+            if ((year - dobyear) >= 18) {
+                document.getElementById('ap-e').innerHTML="your eligible";
+            } else {
+                document.getElementById('ap-e').innerHTML="your not eligible";
+            }
             isValid=false;
         }else{
             document.getElementById('ap-e').innerHTML="";
