@@ -28,10 +28,12 @@
                 <form action="#" name="myForm" method="post" id="myForm">
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">First Name</label>
-                        <input type="text" class="form-control py-3" id="fname" name="fname" placeholder="Enter First Name">
+                        <input type="text" class="form-control py-3" id="fname" name="fname"
+                            placeholder="Enter First Name">
+                        <span class="error-message" id="error"></span>
                     </div>
 
-                    <div class=" col-md-6 mb-3">
+                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold ">Last Name</label>
                         <input type="text" class="form-control py-3" id="lname" name="lname"
                             placeholder="Enter Last Name">
@@ -91,8 +93,10 @@
                             placeholder="Enter Join Date">
                     </div>
                     <div class=" col-md-6 mb-3 text-center ">
-                        <button type="submit" class="btn btn-success fw-bold py-2 my-3" id="submit" name="submit-btn"
-                            value="submit">Submit</button>
+                        <!-- <button type="submit" class="btn btn-success fw-bold py-2 my-3" id="submit" name="submit-btn"
+                            value="submit">Submit</button> -->
+
+                            <button type="submit" class="btn btn-success fw-bold py-2 my-3" name="submitBtn" id="submitBtn" value="submit">Submit</button>
                     </div>
 
                 </form>
@@ -104,3 +108,80 @@
 </body>
 
 </html>
+
+<script>
+
+
+    document.getElementById('myForm').addEventListener("submitBtn", function (event) {
+        event.preventDefault();
+        var isValid = true;
+        // first name
+        var fname = document.getElementById('fname').value;
+        var flength = fname.flength; 
+        if (fname != "") {
+            if (flength < 3 || flength > 16) {
+                document.getElementById('error').innerHTML = "first name should be morethen 3 and less then 13 charactors";
+                isValid = false;
+            }
+
+        } else {
+            document.getElementById('error').innerHTML = "";
+        }
+
+        // // last name
+        var lname = document.getElementById('lname').value;
+        var flength = lname.flength;
+        if (lname != "") {
+            if(flength < 2 || flength > 12){
+                document.getElementById('error-lastname').innerHTML = "please enter last name";
+            isValid = false;
+            }
+            
+        } else {
+            document.getElementById('error-lastname').innerHTML = "";
+        }
+        // // age
+        // var age = document.getElementById('age').value;
+        // var dobyear;
+        // var year;
+        // if (age != null) {
+        //     if (age < 18 || age > 58) {
+        //         document.getElementById('error-age').innerHTML = "please enter your age ";
+        //         isValid = false;
+        //     }
+        // } else {
+        //     document.getElementById('error-age').innerHTML = "";
+        // }
+
+        // // gender
+        // var gender = document.getElementById('gender').value;
+        // var gendername = document.getElementsByName('gender');
+        // if (gender = "") {
+        //     for (var i = 0; i < gendername.length; i++) {
+        //         if (gendername[i].checked) {
+        //             gender = gendername[i].value;
+        //             break;
+        //         }
+        //     }
+        //     if (gender == "") {
+        //         document.getElementById('error-gender').innerHTML = "please select your gender";
+        //         isValid = false;
+        //     }
+
+        // } else {
+        //     document.getElementById('error-gender').innerHTML = "";
+        // }
+
+
+
+
+
+
+
+
+        if (isValid) {
+            event.target.submit();
+        }
+
+    });
+</script>
