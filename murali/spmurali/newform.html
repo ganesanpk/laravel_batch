@@ -83,7 +83,7 @@
                     </div>
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">APPLY DATE</label>
-                        <input type="date" class="form-control py-3" id="adate" name="adate" placeholder="Enter Join Date">
+                        <input type="date" class="form-control py-3" id="jdate" name="adate" placeholder="Enter Join Date">
                         <span class="error-meassage" id="ap-e"></span>
                     </div>
                     <div class=" col-md-6 mb-3 text-center ">
@@ -119,103 +119,125 @@
         }else{
             document.getElementById('f-e').innerHTML="please enter first name";
         }
-        // // last name
-        // var lname=document.getElementById('lname').value;
-        // var llength = lname.length;
-        // if(lname !=""){
-        //     if (llength < 1 || llength > 5)
-        //     document.getElementById('l-e').innerHTML="last name is below 4 character";
-        //     isValid = false;
-        // }else{
-        //     document.getElementById('l-e').innerHTML="please enter last name"
-        // }
-        //  // dob
-        //  var dob= document.getElementById('dob').value;
-        // if (dob==""){
-        //     document.getElementById('d-e').innerHTML="plese enter dob";
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('d-e').innerHTML="";
-        // }
-        // // age
-        // var age= document.getElementById('age');
-        // if (age !=""){
-        //     if (age < 18 || age > 58){
-        //         document.getElementById('a-e').innerHTML="age must be 18 to 58";
-        //     isValid=false;
-        //     }
-        // }else{
-        //     document.getElementById('a-e').innerHTML="";
-        // }
-        // // gender
-        // var gender= document.getElementById('gender').value;
-        // if (gender == ""){
-        //     document.getElementById('g-e').innerHTML="please select any one gender";
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('g-e').innerHTML="";
-        // }
-        // // mob
-        // var mob= document.getElementById('mob').value;
-        // const mobno = /^[0-9]{10}/;
-        // if (!mobno.test(mob)) {
-        //     document.getElementById('m-e').innerHTML="enter your 10 digit mob no with format";
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('m-e').innerHTML="";
-        // }
-        // // email
-        // var email= document.getElementById('email').value;
-        // var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
-        // if (!mailformat.test(email)) {
-        //     document.getElementById('e-e').innerHTML="enter mail id with formate";
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('e-e').innerHTML="";
-        // }
-        // // password
-        // var pass= document.getElementById('pass').value;
-        // const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
-        // if (!passreg.test(pass)) {
-        //     document.getElementById('p-e').innerHTML="please enter valid password";
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('p-e').innerHTML="enter pass word";
-        // }
-        // // conform password
-        // var cpass= document.getElementById('cpass').value;
-        // if (pass = cpass) {
-        //     document.getElementById('c-e').innerHTML="Password created successfully";
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('c-e').innerHTML="";
-        // }
-        // // qualification
-        // var qual = document.getElementById('qual').value;
-        // if (quali != "") {
-        //     if (lquali >= 2 || lquali <= 5) {
-        //         document.getElementById('q-e').innerHTML=("qualification length must be less 2 or high 5");
-        //     isValid=false;
-        //     }
-        // }else{
-        //     document.getElementById('q-e').innerHTML="";
-        // }
-        // // apply date
-        // var adate= document.getElementById('adate').value;
-        // cdate = new Date(adate);
-        // var year = cdate.getFullYear();
-        // if (adate != "") {
-        //     if ((year - dobyear) >= 18) {
-        //         document.getElementById('ap-e').innerHTML="your eligible";
-        //     } else {
-        //         document.getElementById('ap-e').innerHTML="your not eligible";
-        //     }
-        //     isValid=false;
-        // }else{
-        //     document.getElementById('ap-e').innerHTML="";
-        // }
-        // if (isValid){
-        //     event.target.submit();
-        // }
+        
+        // last name
+        var lname=document.getElementById('lname').value;
+        var llength = lname.length;
+        if(lname !=""){
+            if (llength < 2 || llength > 5){
+            document.getElementById('l-e').innerHTML="last name is less 2 and greater 5 character";
+            isValid = false;
+            }
+        }else{
+            document.getElementById('l-e').innerHTML="please enter last name"
+        }
+         // dob
+         var dob= document.getElementById('dob').value;
+         if (dob != "") {
+            dobdate = new Date(dob);
+            dobyear = dobdate.getFullYear();
+            document.getElementById('d-e').innerHTML=""
+        }else{
+            document.getElementById('d-e').innerHTML="plese enter dob";
+        }
+        
+        // age
+        var age= document.getElementById('age').value;
+        if (age !=""){
+            if (age < 18 || age > 58){
+                document.getElementById('a-e').innerHTML="age must be 18 to 58";
+            isValid=false;
+            }
+        }else{
+            document.getElementById('a-e').innerHTML="";
+        }
+        // gender
+        var gendername = document.getElementsByName('gender');
+        var gender = "";
+        for (var i = 0; i < gendername.length; i++) {
+            if (gendername[i].checked) {
+                gender = gendername[i].value;
+                break;
+            }
+        }
+        if (gender==""){
+            document.getElementById('g-e').innerHTML="please select any one gender";
+            isValid=false;
+        }else{  
+            document.getElementById('g-e').innerHTML="";
+            isValid=false;
+        }
+        // mob
+        var mob= document.getElementById('mob').value;
+        const mobno = /^[0-9]{10}/;
+        if (!mobno.test(mob)) {
+            document.getElementById('m-e').innerHTML="enter your 10 digit mob no with format";
+            isValid=false;
+        }else{
+            document.getElementById('m-e').innerHTML="";
+        }
+        // email
+        var email= document.getElementById('email').value;
+        var mailformat = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
+        if (!mailformat.test(email)) {
+            document.getElementById('e-e').innerHTML="enter mail id with formate";
+            isValid=false;
+        }else{
+            document.getElementById('e-e').innerHTML="";
+        }
+        // password
+        var pass= document.getElementById('pass').value;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+        if(pass !=""){
+            if (!passreg.test(pass)) {
+            document.getElementById('p-e').innerHTML="password enter is this format";
+            isValid=false;
+            }
+        }else{
+            document.getElementById('p-e').innerHTML="please enter password"
+        }
+
+        // conform password
+        var cpass= document.getElementById('cpass').value;
+        if(cpass!=""){
+            if (pass == cpass) {
+                document.getElementById('c-e').innerHTML="";
+        }else{
+            document.getElementById('c-e').innerHTML="password and confirm password should be same";
+            isValid=false;
+        }
+        }else{
+            document.getElementById('c-e').innerHTML="Please Enter confirm password";
+            isValid=false;
+        }
+        // qualification
+        var qual = document.getElementById('qual').value;
+        var lqual= qual.length;
+        if (qual != "") {
+            if (lqual < 2 || lqual > 5) {
+                document.getElementById('q-e').innerHTML=("qualification length must be less 2 or high 5");
+                isValid=false;
+            }
+        }else{
+            document.getElementById('q-e').innerHTML="Please Enter Qualification";
+            isValid=false;
+        }
+        
+        // apply date
+        var jdate = document.getElementById('jdate').value;
+        var cdate = new Date(jdate);
+        var year = cdate.getFullYear();
+        if (jdate != "") {
+            if ((year - dobyear) >= 18) {
+                document.getElementById('ap-e').innerHTML=("your eligible");
+            } else {
+                document.getElementById('ap-e').innerHTML=("your not eligible");
+            }
+        } else {
+            document.getElementById('ap-e').innerHTML=("plese enter your apply date")
+        }
+        if (isValid){
+            event.target.submit();
+        }
     });
 </script>
