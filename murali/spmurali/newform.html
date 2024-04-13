@@ -119,6 +119,7 @@
         }else{
             document.getElementById('f-e').innerHTML="please enter first name";
         }
+        
         // last name
         var lname=document.getElementById('lname').value;
         var llength = lname.length;
@@ -184,22 +185,30 @@
         }
         // conform password
         var cpass= document.getElementById('cpass').value;
-        if (pass = cpass) {
-            document.getElementById('c-e').innerHTML="Password created successfully";
-            isValid=false;
+        if(cpass!=""){
+            if (pass == cpass) {
+                document.getElementById('c-e').innerHTML="";
         }else{
-            document.getElementById('c-e').innerHTML="";
+            
+            document.getElementById('c-e').innerHTML="password and confirm password should be same";
+            isValid=false;
+        }
+        }else{
+            document.getElementById('c-e').innerHTML="Please Enter confirm password";
+            isValid=false;
         }
         // qualification
         var qual = document.getElementById('qual').value;
-        if (quali != "") {
-            if (lquali >= 2 || lquali <= 5) {
+        if (qual != "") {
+            if (lqual < 2 || lqual > 5) {
                 document.getElementById('q-e').innerHTML=("qualification length must be less 2 or high 5");
-            isValid=false;
+                isValid=false;
             }
         }else{
-            document.getElementById('q-e').innerHTML="";
+            document.getElementById('q-e').innerHTML="Please Enter Qualification";
+            isValid=false;
         }
+        
         // apply date
         var adate= document.getElementById('adate').value;
         cdate = new Date(adate);
