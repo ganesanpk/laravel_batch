@@ -108,7 +108,6 @@
 </body>
 
 </html>
-<<<<<<< HEAD
 <script>
     var gender = document.getElementById('gender').value;
     var gendername ="";
@@ -119,82 +118,4 @@
         }
     }
 
-=======
-
-<script>
-
-
-    document.getElementById('myForm').addEventListener("submitBtn", function (event) {
-        event.preventDefault();
-        var isValid = true;
-        // first name
-        var fname = document.getElementById('fname').value;
-        var flength = fname.flength; 
-        if (fname != "") {
-            if (flength < 3 || flength > 16) {
-                document.getElementById('error').innerHTML = "first name should be morethen 3 and less then 13 charactors";
-                isValid = false;
-            }
-
-        } else {
-            document.getElementById('error').innerHTML = "";
-        }
-
-        // // last name
-        var lname = document.getElementById('lname').value;
-        var flength = lname.flength;
-        if (lname != "") {
-            if(flength < 2 || flength > 12){
-                document.getElementById('error-lastname').innerHTML = "please enter last name";
-            isValid = false;
-            }
-            
-        } else {
-            document.getElementById('error-lastname').innerHTML = "";
-        }
-        // // age
-        // var age = document.getElementById('age').value;
-        // var dobyear;
-        // var year;
-        // if (age != null) {
-        //     if (age < 18 || age > 58) {
-        //         document.getElementById('error-age').innerHTML = "please enter your age ";
-        //         isValid = false;
-        //     }
-        // } else {
-        //     document.getElementById('error-age').innerHTML = "";
-        // }
-
-        // // gender
-        // var gender = document.getElementById('gender').value;
-        // var gendername = document.getElementsByName('gender');
-        // if (gender = "") {
-        //     for (var i = 0; i < gendername.length; i++) {
-        //         if (gendername[i].checked) {
-        //             gender = gendername[i].value;
-        //             break;
-        //         }
-        //     }
-        //     if (gender == "") {
-        //         document.getElementById('error-gender').innerHTML = "please select your gender";
-        //         isValid = false;
-        //     }
-
-        // } else {
-        //     document.getElementById('error-gender').innerHTML = "";
-        // }
-
-
-
-
-
-
-
-
-        if (isValid) {
-            event.target.submit();
-        }
-
-    });
->>>>>>> bc749849f6edcb5ab8fc3e42172b958ccdcbcdb4
 </script>
