@@ -33,7 +33,7 @@
                         <span class="error-message" id="error"></span>
                     </div>
 
-                     <div class=" col-md-6 mb-3">
+                    <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold ">Last Name</label>
                         <input type="text" class="form-control py-3" id="lname" name="lname"
                             placeholder="Enter Last Name">
@@ -56,47 +56,54 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="gender" id="Others" value="Others">Others
                         </div>
+                        <br>
                         <span class="error-message" id="error-gender"></span>
                     </div>
 
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Date Of Birth</label>
                         <input type="date" class="form-control py-3" id="dob" name="dob">
+                        <span class="error-message" id="error-dob"></span>
                     </div>
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Mobile Number</label>
                         <input type="number" class="form-control py-3" id="mob" name="mob"
                             placeholder="Enter Mobile Number">
+                        <span class="error-message" id="error-mob"></span>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Email address</label>
                         <input type="email" class="form-control py-3" id="email" name="email" placeholder="Enter Email">
+                        <span class="error-message" id="error-email"></span>
                     </div>
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Password</label>
                         <input type="password" class="form-control py-3" id="pass" name="pass"
                             placeholder="Enter password">
+                        <span class="error-message" id="error-pass"></span>
                     </div>
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Confirm Password</label>
                         <input type="password" class="form-control py-3" id="conpass" name="conpass"
                             placeholder="Enter password">
+                        <span class="error-message" id="error-conpass"></span>
+
                     </div>
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Qualification</label>
                         <input type="text" class="form-control py-3" id="qual" name="qual"
                             placeholder="Enter Qualification">
+                        <span class="error-message" id="error-qul"></span>
                     </div>
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Date Of Joining</label>
                         <input type="date" class="form-control py-3" id="jdate" name="jdate"
                             placeholder="Enter Join Date">
+                            <span class="error-message" id="error-jdate"></span>
                     </div>
                     <div class=" col-md-6 mb-3 text-center ">
-                        <!-- <button type="submit" class="btn btn-success fw-bold py-2 my-3" id="submit" name="submit-btn"
-                            value="submit">Submit</button> -->
-
-                            <button type="submit" class="btn btn-success fw-bold py-2 my-3" name="submitBtn" id="submitBtn" value="submit">Submit</button>
+                        <button type="submit" class="btn btn-success fw-bold py-2 my-3" name="submit" id="submit"
+                            value="submit">Submit</button>
                     </div>
 
                 </form>
@@ -108,14 +115,156 @@
 </body>
 
 </html>
+
 <script>
-    var gender = document.getElementById('gender').value;
-    var gendername ="";
-    for(var i=0; i<gender.length; i++){
-        if(gender[i].checked==true){
-            gendername = gender[i].value;
-            break;
-        }
+    function callage() {
+        var dob = document.getElementById('dob').value;
+        var ages = document.getElementById('age');
+        var cdob = new Date(dob);
+        var cdate = new Date();
+        var age = cdate.getFullYear() - cdob.getFullYear();
+        ages.value = age;
     }
 
+    document.getElementById('myForm').addEventListener("submit", function (event) {
+        event.preventDefault();
+        var isValid = true;
+        // first name
+        var fname = document.getElementById('fname').value;
+        var flength = fname.flength;
+        if (fname != "") {
+            if (flength < 3 || flength > 16) {
+                document.getElementById('error').innerHTML = "first name should be morethen 3 and less then 13 charactors";
+                isValid = false;
+            }
+        } else {
+            document.getElementById('error').innerHTML = "please enter first name";
+        }
+
+        // // last name
+        var lname = document.getElementById('lname').value;
+        var flength = lname.flength;
+        if (lname != "") {
+            if (flength < 2 || flength > 12) {
+                document.getElementById('error-lastname').innerHTML = "last name should be morethen 2 and less then 12 charactors";
+                isValid = false;
+            }
+
+        } else {
+            document.getElementById('error-lastname').innerHTML = "please enter last name";
+        }
+        // // age
+        var age = document.getElementById('age').value;
+        var dobyear;
+        var year;
+        if (age != null) {
+            if (age < 18 || age > 58) {
+                document.getElementById('error-age').innerHTML = "Age must be 18 to 58";
+                isValid = false;
+            }
+        } else {
+            document.getElementById('error-age').innerHTML = "please enter your age";
+        }
+
+        // // gender
+        var gendername = document.getElementsByName('gender');
+        var gender = ""
+        for (var i = 0; i < gendername.length; i++) {
+            if (gendername[i].checked) {
+                gender = gendername[i].value;
+                break;
+            }
+        }
+        if (gender == "") {
+            document.getElementById('error-gender').innerHTML = "please select any one gender";
+            isValid = false;
+        } else {
+            document.getElementById('error-gender').innerHTML = "";
+            isValid = false;
+        }
+        // date of birth
+        var dob = document.getElementById("dob").value;
+        if (dob != "") {
+            dobdate = new Date(dob);
+            dobyear = dobdate.getFullYear();
+            document.getElementById('error-dob').innerHTML = "";
+        } else {
+            document.getElementById('error-dob').innerHTML = "please enter your dob";
+        }
+
+        // mobile number
+        var mob = document.getElementById('mob').value;
+        const mobre = /^[89]\d{9}$/;
+        if (!mobre.test(mob)) {
+            document.getElementById('error-mob').innerHTML = "Enter your 10 digit mob no with format";
+            isValid = false;
+        } else {
+            document.getElementById('error-mob').innerHTML = "";
+        }
+
+        // email address
+        var email = document.getElementById('email').value;
+        const mailreg = /^[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+([A-Za-z0-9]{2,4}|museum)$/;
+        if (!mailreg.test(email)) {
+            document.getElementById('error-email').innerHTML = "Enter email id with format";
+            isValid = false;
+        } else {
+            document.getElementById('error-email').innerHTML = "";
+        }
+
+        // passord
+        var pass = document.getElementById('pass').value;
+        var flength = pass.length;
+        const passreg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,15}$/;
+        if (pass != "") {
+            if (!passreg.test(pass)) {
+                document.getElementById('error-pass').innerHTML = "password enter is this format";
+                isValid = false;
+            }
+        } else {
+            document.getElementById('error-pass').innerHTML = "please enter password";
+        }
+
+        // confirm password
+        var conpass = document.getElementById('conpass').value;
+        if (!pass == conpass) {
+            document.getElementById('error-conpass').innerHTML = "Password created successfully";
+        } else {
+            document.getElementById('error-conpass').innerHTML = "Passwords did not match";
+        }
+
+        // qualification
+        var qual = document.getElementById('qual').value;
+        var flength = qual.length;
+        const qualreg = /^[A-Za-z\d ().,]{1,8}$/;
+        if (!qualreg.test(qual)) {
+            if (flength > 2 || flength < 4) {
+                document.getElementById('error-qul').innerHTML = "qualification Must be 2 to 6";
+            } else {
+                document.getElementById('error-qul').innerHTML = "qualification submited";
+            }
+        } else {
+            document.getElementById('error-qul').innerHTML = "Qualification is maditary";
+        }
+
+        // join date
+
+        var jdate = document.getElementById('jdate').value;
+        var cdate = new Date(jdate);
+        var year = cdate.getFullYear();
+        if (jdate != "") {
+            if ((year - dobyear) >= 18) {
+                document.getElementById('error-jdate').innerHTML = ("your eligible");
+            } else {
+                document.getElementById('error-jdate').innerHTML = ("your not eligible");
+            }
+        } else {
+            document.getElementById('error-jdate').innerHTML = ("plese enter your apply date")
+        }
+
+        if (isValid) {
+            event.target.submit();
+        }
+
+    });
 </script>
