@@ -115,6 +115,8 @@
             if(flength < 3 || flength > 16){
                 document.getElementById('f-e').innerHTML="first name is less 3 and greater 16 character";
                 isValid=false;
+            }else{
+                document.getElementById('f-e').innerHTML=""
             }
         }else{
             document.getElementById('f-e').innerHTML="please enter first name";
@@ -127,6 +129,8 @@
             if (llength < 2 || llength > 5){
             document.getElementById('l-e').innerHTML="last name is less 2 and greater 5 character";
             isValid = false;
+            }else{
+                document.getElementById('l-e').innerHTML=""
             }
         }else{
             document.getElementById('l-e').innerHTML="please enter last name"
@@ -192,6 +196,8 @@
             if (!passreg.test(pass)) {
             document.getElementById('p-e').innerHTML="password enter is this format";
             isValid=false;
+            }else{
+                document.getElementById('p-e').innerHTML=""
             }
         }else{
             document.getElementById('p-e').innerHTML="please enter password"
@@ -217,6 +223,8 @@
             if (lqual < 2 || lqual > 5) {
                 document.getElementById('q-e').innerHTML=("qualification length must be less 2 or high 5");
                 isValid=false;
+            }else{
+                document.getElementById('q-e').innerHTML=""
             }
         }else{
             document.getElementById('q-e').innerHTML="Please Enter Qualification";
@@ -228,10 +236,10 @@
         var cdate = new Date(jdate);
         var year = cdate.getFullYear();
         if (jdate != "") {
-            if ((year - dobyear) >= 18) {
-                document.getElementById('ap-e').innerHTML=("your eligible");
+            if (jdate <= year) {
+                document.getElementById('ap-e').innerHTML=("");
             } else {
-                document.getElementById('ap-e').innerHTML=("your not eligible");
+                document.getElementById('ap-e').innerHTML=("please current year or previous year");
             }
         } else {
             document.getElementById('ap-e').innerHTML=("plese enter your apply date")
