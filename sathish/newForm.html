@@ -62,7 +62,7 @@
 
                     <div class=" col-md-6 mb-3">
                         <label for="" class="form-label fw-bold">Date Of Birth</label>
-                        <input type="date" class="form-control py-3" id="dob" name="dob">
+                        <input type="date" class="form-control py-3" id="dob" name="dob" onchange="callage()">
                         <span class="error-message" id="error-dob"></span>
                     </div>
                     <div class=" col-md-6 mb-3">
@@ -99,7 +99,7 @@
                         <label for="" class="form-label fw-bold">Date Of Joining</label>
                         <input type="date" class="form-control py-3" id="jdate" name="jdate"
                             placeholder="Enter Join Date">
-                            <span class="error-message" id="error-jdate"></span>
+                        <span class="error-message" id="error-jdate"></span>
                     </div>
                     <div class=" col-md-6 mb-3 text-center ">
                         <button type="submit" class="btn btn-success fw-bold py-2 my-3" name="submit" id="submit"
@@ -137,9 +137,13 @@
                 document.getElementById('error').innerHTML = "first name should be morethen 3 and less then 13 charactors";
                 isValid = false;
             }
+            else {
+                document.getElementById('error').innerHTML = "";
+            }
         } else {
-            document.getElementById('error').innerHTML = "please enter first name";
+            document.getElementById('error').innerHTML = "Please enter first name";
         }
+
 
         // // last name
         var lname = document.getElementById('lname').value;
@@ -149,7 +153,9 @@
                 document.getElementById('error-lastname').innerHTML = "last name should be morethen 2 and less then 12 charactors";
                 isValid = false;
             }
-
+            else {
+                document.getElementById('error-lastname').innerHTML = "";
+            }
         } else {
             document.getElementById('error-lastname').innerHTML = "please enter last name";
         }
@@ -161,6 +167,9 @@
             if (age < 18 || age > 58) {
                 document.getElementById('error-age').innerHTML = "Age must be 18 to 58";
                 isValid = false;
+            }
+            else {
+                document.getElementById('error-age').innerHTML = "";
             }
         } else {
             document.getElementById('error-age').innerHTML = "please enter your age";
@@ -212,6 +221,7 @@
             document.getElementById('error-email').innerHTML = "";
         }
 
+
         // passord
         var pass = document.getElementById('pass').value;
         var flength = pass.length;
@@ -237,11 +247,11 @@
         var qual = document.getElementById('qual').value;
         var flength = qual.length;
         const qualreg = /^[A-Za-z\d ().,]{1,8}$/;
-        if (!qualreg.test(qual)) {
-            if (flength > 2 || flength < 4) {
+        if (!qualreg.test(qual)) {sathish
+            if (flength < 2 || flength > 4) {
                 document.getElementById('error-qul').innerHTML = "qualification Must be 2 to 6";
             } else {
-                document.getElementById('error-qul').innerHTML = "qualification submited";
+                document.getElementById('error-qul').innerHTML = "";
             }
         } else {
             document.getElementById('error-qul').innerHTML = "Qualification is maditary";
